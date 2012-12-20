@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Cowculator</title>
+    <meta content="">
+	<script type="text/javascript" language="JavaScript" src="Functions1.js"></script>
+	<script type="text/javascript" language="JavaScript" src="CowCulator.js"></script>
+    <style></style>
+  </head>
+  <body>
+
+  <center>
+  <h1>The Cowculator</h1>
+  <br>
+  <img src="cow.png" usemap="#buttonmap" alt = "Moo!" border="0" />
+  <br>
+  <img border="0" src="numNull.png" ID="out1"/>
+  <img border="0" src="numNull.png" ID="out2"/>
+  <img border="0" src="numNull.png" ID="out3"/>
+  <img border="0" src="numNull.png" ID="out4"/>
+  <img border="0" src="numNull.png" ID="out5"/>
+  <img border="0" src="numNull.png" ID="out6"/>
+  <img border="0" src="numNull.png" ID="out7"/>
+  <img border="0" src="numNull.png" ID="out8"/>
+  </center>
+
+<map id ="buttonmap" name="buttonmap">
+ <!-- Numbers -->
+ <area shape ="rect" coords ="200,60,237,110"  onClick="pressedNumber(1);" onMouseOver="mouseOver('1');" />
+ <area shape ="rect" coords ="254,60,293,110"  onClick="pressedNumber(2);" onMouseOver="mouseOver('2');" />
+ <area shape ="rect" coords ="311,60,351,110"  onClick="pressedNumber(3);" onMouseOver="mouseOver('3');" />
+ <area shape ="rect" coords ="200,130,237,180" onClick="pressedNumber(4);" onMouseOver="mouseOver('4');" />
+ <area shape ="rect" coords ="254,130,293,180" onClick="pressedNumber(5);" onMouseOver="mouseOver('5');" />
+ <area shape ="rect" coords ="311,130,351,180" onClick="pressedNumber(6);" onMouseOver="mouseOver('6');" />
+ <area shape ="rect" coords ="200,180,237,230" onClick="pressedNumber(7);" onMouseOver="mouseOver('7');" />
+ <area shape ="rect" coords ="254,180,293,230" onClick="pressedNumber(8);" onMouseOver="mouseOver('8');" />
+ <area shape ="rect" coords ="311,180,351,230" onClick="pressedNumber(9);" onMouseOver="mouseOver('9');" />
+ <area shape ="rect" coords ="250,235,290,280" onClick="pressedNumber(0);" onMouseOver="mouseOver('0');" />
+ <!-- point and undo -->
+ <area shape ="rect" coords ="210,255,225,280" onClick="pressedThing('.');" onMouseOver="mouseOver('.');" />
+ <area shape ="rect" coords ="302,245,332,277" onClick="pressedThing('undo');" onMouseOver="mouseOver('Undo');" />
+ <!-- Operators -->
+ <area shape ="rect" coords ="380,70,410,100"  onClick="pressedOperator('+');" onMouseOver="mouseOver('+');" />
+ <area shape ="rect" coords ="380,110,410,140" onClick="pressedOperator('-');" onMouseOver="mouseOver('-');" />
+ <area shape ="rect" coords ="380,145,410,175" onClick="pressedOperator('x');" onMouseOver="mouseOver('x');" />
+ <area shape ="rect" coords ="380,185,410,215" onClick="pressedOperator('/');" onMouseOver="mouseOver('/');" />
+ <area shape ="rect" coords ="380,230,410,260" onClick="pressedOperator('=');" onMouseOver="mouseOver('=');" />
+ <!-- Clear -->
+ <area shape ="rect" coords ="286,277,616,338" onClick="pressedThing('clear');" onMouseOver="mouseOver('Clear');" />
+
+</map>
+
+
+</body>
+</html>

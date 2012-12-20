@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  
+  <meta name="Author" content="Neil Hancock">
+  <title>Neil Hancock's Home Page</title>
+</head>
+<body>
+<h1 align="center">A Web Site</h1>
+<p align="center">By Neil Hancock</p>
+<p align="center"><img src="Pics/fishes1.gif"></p>
+<h2 align="center">Rexx Stuff</h2>
+<p align="left">Rexx is a scripting language used heavily on OS/390 Mainframes
+under TSO, ISPF, and sometimes batch work. It also exits in various forms
+on Unix, and PC.</p>
+<p align="left">Here there is a <a href="Computers/rexxfaq.html">Rexx FAQ
+</a>for Rexx on OS/390 Mainframes, and a <a
+ href="Computers/RexxStyleGuide.html">Style Guide for Rexx.</a><br>
+This FAQ attempts to cover questions specific to Rexx on OS/390, for general
+Rexx questions, see the <a
+ href="http://www.mindspring.com/%7Edave_martin/RexxFAQ.html">general Rexx
+FAQ. </a></p>
+<p align="center"><img src="Pics/fishes1.gif"></p>
+<h2 align="center">Other Stuff</h2>
+<p>The <a href="Computers/">Computers</a> section has all the Rexx bits mentioned
+above, plus any applets or whatever.<br>
+<img src="Pics/o_updated.gif" width="60" height="15" alt="Updated"> The Rexx
+FAQ 2003-01-24<br>
+</p>
+<p><a href="ThePit/index.html">The Pit</a> is a collection of pictures and
+other miscellaneous rubbish.<br>
+<img src="Pics/o_updated.gif" width="60" height="15" alt="Updated">Assorted
+pictures added 2002-08-30</p>
+<p><a href="Reference.html">Reference</a> is a load of links to 'useful'
+sites that serves as a sort of bookmark for when Im not using my own PC.
+Never updated.</p>
+<p><a href="Fun/index.html">The Fun Pages.</a>Stuff that got emailed to me.</p>
+<p><a href="SideFish/index.html">Project SideFish</a> is a stalled project
+to create a framework for exploring wildlife online. </p>
+<p align="center"><img src="Pics/fishes1.gif"> </p>
+<center><a href="http://petition.eurolinux.org"><img
+ src="http://aful.org/images/patent_banner.png" border="0"></a></center>
+<p>I work <a href="http://www.macro4.com">here</a> on <a
+ href="http://www.macro4.com/fault/index.html">this</a>. Previously I worked
+<a href="http://www.meto.gov.uk">here</a>.</p>
+<br>
+<br>
+</body>
+</html>

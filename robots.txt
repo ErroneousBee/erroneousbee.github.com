@@ -1,0 +1,3 @@
+User-agent: *   # directed to all spiders
+Disallow: /Pics
+Disallow: /Reference.html

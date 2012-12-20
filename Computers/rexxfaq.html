@@ -1,0 +1,1082 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="description"
+ content="FAQ for Rexx in OS/390 environments.">
+  <meta name="keywords" content="Rexx TSO MVS OS/390">
+  <title>FAQ for TSO/REXX</title>
+</head>
+<body style="background-color: rgb(255, 255, 255);">
+<table border="0" width="100%">
+  <tbody>
+    <tr>
+      <td><a href="index.html"><img src="../Pics/o_up.gif" border="0"
+ width="30" height="30">Up to the computing page. </a><br>
+      <a href="mailto:webspace@neilhancock.co.uk"><img
+ src="../Pics/o_mailto.gif" border="0" width="30" height="30">Send
+Feedback.</a></td>
+      <td>
+      <p align="right">Last-modified: 01 Aug 2004<br>
+Version: 1.4q </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h1 align="center">TSO-REXX Frequently Asked Questions </h1>
+<hr>
+<h2 align="center">Contents<br>
+</h2>
+<ol>
+  <li><a href="#C0Intro">Introduction</a>
+    <ol>
+      <li><a href="#C0Changes">Changes made to the FAQ at this release</a>
+      </li>
+      <li><a href="#C0ToDo">To Do</a></li>
+    </ol>
+  </li>
+  <li><a href="#C1Coding">Using Rexx.</a>
+    <ol>
+      <li><a href="#C1Running">How do I Run My Rexx Exec.</a> </li>
+      <li><a href="#C1Alloc">How do I allocate Exec
+libraries and other datasets to my TSO or ISPF
+session.</a></li>
+      <li><a href="#C1Docs">Where can I find Rexx manuals and
+documentation.</a></li>
+      <li><a href="#RTFToC5">How do I find or access the current level
+of a GDG. </a></li>
+      <li><a href="#RTFToC6">How do I access data in control blocks
+such as jobname. </a></li>
+      <li><a href="#RTFToC7">How can I access a calling execs
+variables. </a></li>
+      <li><a href="#RTFToC9">How do I implement job control with (and
+for) Rexx</a> </li>
+      <li><a href="#RTFToC11">Where are the Standard Rexx I/O
+functions. </a></li>
+      <li><a href="#RTFToC12">How do I replicate CLIST's WRITENR
+functionality.</a> </li>
+      <li><a href="#C1Outtrap">Why does Outtrap() not trap all output. </a></li>
+      <li><a href="#C1EXECIO">EXECIO, why does it require 'Enter' more
+than once. </a></li>
+      <li><a href="#C1LisDS">How do I List Datasets and PDS members. </a></li>
+      <li><a href="#C1spool">How do I access data held on the JES
+spool. </a></li>
+      <li><a href="#C1OddRcs">What do unusual return codes such
+as -3 and 0196 mean.</a></li>
+      <li><a href="#C1MacroParms">How do I pass parms to my
+ISPF Edit macro.</a></li>
+      <li style="font-weight: bold;"><a href="#C1Parse_ARG">Why are my
+procedure arguments in
+upper case.</a></li>
+    </ol>
+  </li>
+  <li><a href="#C2Environs">Rexx and Different environments.</a>
+    <ol>
+      <li><a href="#C2OEServ">OS/390 Unix Systems Services</a> </li>
+      <li><a href="#RTFToC17">ISPF Services</a> </li>
+      <li><a href="#ISPFRc">ISPF Services in Batch</a> </li>
+      <li><a href="#RTFToC18">Load Modules (I.e. Assembled programs)</a>
+      </li>
+      <li><a href="#RTFToC10">SQL</a> </li>
+      <li><a href="#C2consl1">Console Command Environment</a> </li>
+      <li><a href="#RTFToC19">Rexx aware editors</a> </li>
+      <li><a href="#RTFToC20">Rexx Compilers</a> </li>
+      <li><a href="#C2CGI">Using Rexx as CGI programs with the Web
+Server.</a> </li>
+    </ol>
+  </li>
+  <li><a href="#C3Style">Style. </a>
+    <ol>
+      <li><a href="#RTFToC22">What are the most effective ways to use
+comments? </a></li>
+      <li style="font-weight: bold;"><a href="#RTFToC23">EXECIO.</a> </li>
+      <li><a href="#RTFToC24">What case should I program in, upper or
+lower? </a></li>
+      <li><a href="#RTFToC25">Functions and procedures</a> </li>
+      <li><a href="#RTFToC26">Logical (Boolean) variables and
+functions. </a></li>
+      <li><a href="#RTFToC27">Symbolic names.</a> </li>
+      <li><a href="#RTFToC28">Internal and external calls</a> </li>
+      <li><a href="#RTFToC29">How can I improve performance of my exec?</a>
+      </li>
+      <li><a href="#RTFToC30">How can my systems programmer improve
+performance?</a> </li>
+      <li><a href="#C3Tricks">What obscure coding tricks are
+there?</a></li>
+      <li><a href="#C3AlphaNum">Using Non-Alphanumeric characters. </a></li>
+      <li><a href="#C3Other">Are there any other style hints? </a></li>
+    </ol>
+  </li>
+  <li><a href="#Appendix">Appendices. </a>
+    <ol>
+      <li><a href="#ACode">Code Examples </a></li>
+      <li><a href="#ARefs">Other Sources of Information</a></li>
+      <li><a href="#ASubscribe">Subscribing to the TSO-REXX List</a></li>
+      <li><a href="#AGlossary">Glossary </a></li>
+    </ol>
+  </li>
+</ol>
+<hr>
+<h2 align="center"><a name="C0Intro">Introduction </a></h2>
+<p>This FAQ is for REXX/MVS, that is, REXX for IBM mainframes (MVS,
+OS/390
+and VM). It is unofficial and based on questions asked in the TSO-REXX
+listserv
+group based at <a href="#ASubscribe">LISTSERV@VM.MARIST.EDU.</a></p>
+<p>As is the case with all FAQs, this document is a work in progress.
+Additions,
+corrections, and comments are very welcome. Please send any
+correspondence
+to <a href="mailto:webspace@neilhancock.co.uk">webspace@neilhancock.co.uk </a></p>
+<p>If this FAQ or the <a
+ href="http://www.marist.edu/htbin/wlvindex?tso-rexx">List Archive</a>does
+not answer your Rexx questions, do not email me, but instead <a
+ href="#ASubscribe">subscribe to the TSO-REXX List</a> where your
+questions
+will be usually be answered promptly by many knowlegable people.</p>
+<p>Thanks for contributions from: <br>
+Jon Alexander, Stephen Bacher, Tim Larsen, John McDonald, and all those
+who
+posed and answered questions on the mail list. </p>
+<p>In coding examples, screen output is indicated by ==&gt; within a
+comment.<br>
+Latest edits are marked in bold in the contents section.<br>
+</p>
+<h3 align="center"><a name="C0Changes">Changes made to the FAQ at this
+release.</a></h3>
+<ul>
+  <li>1.4q - Update links and whatnot, add EXECIO tip, add PARSE ARG. </li>
+  <li>1.4p - New coding trick. Assorted submissions and updates
+(Thanks!).<br>
+  </li>
+  <li>1.4o - Assorted minor things from the list, edit macro parms.</li>
+  <li>1.4n - R.I.P. Deja. ReMarQ too. Code examples moved external
+to FAQ.</li>
+  <li>1.4m - Performance updated. Coding tricks added.</li>
+  <li>1.4l - LIBDEF/ALLOC/ALTLIB question and sample.</li>
+  <li>1.4k - Subscription Info added.</li>
+  <li>1.4j - Rexx in Batch added. More info added to. RXSQL noted.
+Docs question added.</li>
+  <li>1.4i - More reformatting, Some answers reviewed and amended.</li>
+  <li>1.4h - Minor formatting.</li>
+  <li>1.4g - Corrections submitted by Peter Tillier. Reinstated rexx
+information sources</li>
+</ul>
+<h3 align="center"><a name="C0ToDo">To Do</a></h3>
+<ul>
+  <li>Is Posix (USS) info still up to date and correct? </li>
+  <li>Inline JCL technique with IEBGENER to temp PDS.</li>
+  <li>XMLify.</li>
+  <li>Scare up some useful google keywords.<br>
+  </li>
+</ul>
+<hr>
+<h2 align="center"><a name="C1Coding">Using Rexx. </a></h2>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C1Running"><strong>How do I Run My Rexx Exec.</strong></a> </p>
+<p>Most of this is described in the User Guide, or in the guide for the
+appropriate
+environment. </p>
+<p>For the TSO environment: </p>
+<ul>
+  <li>Make sure the Exec starts with the <strong>/* REXX */</strong>
+comment. </li>
+  <li><strong>TSO EXEC 'hlq.your.dsn(member)'</strong><code> </code>runs
+Rexx in exactly the same way as it would a CLIST. </li>
+  <li><strong>TSO EX yourlib(member) E</strong> uses a suffix of
+EXEC and the TSO <a href="#Glossary">profile prefix </a>to form a
+full DSN of <strong>'your_prefix.yourlib.EXEC(member)' </strong></li>
+  <li>The SYSEXEC concatenation can be used to run execs using <code>TSO
+execname</code>. The SYSPROC concatenation will do just as
+well, but is really intended for CLISTS. </li>
+  <li><code>TSO %execname parameter_string</code> allows you to pass a
+parameter string to the exec, note that this string is only
+a single argument, not multiple arguments as can be used when calling
+from within an exec. The '%' instructs TSO to not use loadlib
+concatenations
+when constructing the search path. </li>
+</ul>
+<p>For running Rexx in batch:</p>
+<ul>
+  <li>Create a batch environment for the Exec to run in with
+PGM=IRXJCL,
+PGM=IKJEFT01 or PGM=IKJEFT1B</li>
+  <li>IRXJCL is a straight batch environment</li>
+  <li>IKJEFT01 and IKJEFT1B are the TSO in batch programs.</li>
+  <li>Put the Rexx exec libraries in the SYSEXEC DD concatenation.</li>
+  <li>Call your exec via the PARM='yourprog' or as input in the SYSTSIN
+DD</li>
+  <li>See the <a href="#ACode">Code Examples</a> appendix for examples.</li>
+</ul>
+<p>For more information, <a
+ href="http://www.s390.ibm.com/os390/bkserv/">RTFM</a>.
+</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C1Alloc"><strong>How do I allocate Exec libraries and other
+datasets
+to my TSO or ISPF session.</strong></a></p>
+<ul>
+  <li>ALTLIB ACTIVATE can be used to dynamically add an Exec or Clist
+library to the search path. I don't know whether these ATLIBs
+are stacked in the way LIBDEFs can be.</li>
+  <li>LIBDEF can be used to dynamically allocate other libraries,
+such as ISPF panel libraries. Use the STACK option to avoid corrupting
+the environment for nested calls to applications. An example
+LIBDEF/ALTLIB
+is in an <a href="#ACode">appendix</a>.</li>
+  <li>Your allocations at logon are controlled by the JCL procedure
+used to initiate your TSO environment. This is called your TSO LOGON
+PROCEDURE, and it will be under the control of your systems programmer.</li>
+  <li>To override the LOGON proc and allocate your own SYSEXEC,
+ISPPLIB, etc concatenations, the TSO ISRDDN command can create a handy
+CLIST to use as your base. To generate the TSO ALLOC commands needed
+to replicate your current allocations, type the CLIST command on
+the command line. Edit and save the Clist created, and run it at
+logon (outside of ISPF) to allocate your own environment.</li>
+</ul>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C1Docs"><strong>Where can I find Rexx manuals and documentation.</strong></a></p>
+<a href="http://www.ibm.com/servers/eserver/zseries/zos/bkserv/">IBM
+Online Library</a> in
+HTML
+and PDF form, clisk on the 'elements and features' links.
+<p>The Rexx Reference and Guide are in the TSO section.<br>
+ISPF interfaces ( E.g. ISPF Edit Macro commands) are documented in the
+ISPF
+section. <br>
+There is a manual for Rexx in the Unix System Services environment.<br>
+Interfaces for other applications will be documented with that
+application.</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC5"><strong>How do I find or access the current level of a
+GDG.
+</strong></a></p>
+<p>Use Outtrap() on the output of TSO LISTCAT. </p>
+<p>See RXGDGV() in the appendices.</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC6"><strong>How do I access data in control blocks such as
+jobname?
+</strong></a></p>
+<p>Use the Storage() function to extract the data from control blocks. </p>
+<p><code>/* REXX Get taskname from TCB */ <br>
+cvt = storage(10,4) /* FLCCVT-PSA data area */ <br>
+tcbp = storage(d2x(c2d(cvt)),4) /* CVTTCBP */ <br>
+tcb = storage(d2x(c2d(tcbp)+4),4) <br>
+tiot = storage(d2x(c2d(tcb)+12),4) /* TCBTIO */ <br>
+say strip(storage(d2x(c2d(tiot)),8)) /* TIOCNJOB */ <br>
+/* I have lost the original author of this code.<br>
+Thanks whoever you are - NWH */ <br>
+</code></p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC7"><strong>How can I access a calling execs variables.</strong></a></p>
+<p>Rexx doesn't allow an exec to access the symbols used by another
+exec.
+A classic example of this is creating an exec to sort the contents of a
+stemmed
+symbol. </p>
+<p>Some suggested methods are: </p>
+<ul>
+  <li>Use ISPF variable pools to pass values across execs</li>
+  <li>Pass all symbols as arguments and returned values (I.e. Use <em>PARSE
+ARG args</em> and <em>RETURN value</em>). </li>
+  <li>Create your own function in assembler to pass stems across.
+Refer to the IRXEXCOM macro interface in the IBM Rexx manuals.</li>
+  <li>Generate executable code as the returned string and use INTERPRET
+on it to make the variables available in the external program. </li>
+  <li>Use the stack, see NEWSTACK, DELSTACK, PUSH, PULL, QUEUE, etc, in
+the manual. <br>
+  </li>
+</ul>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC9"><strong>How do I implement job control with (and for)
+Rexx
+</strong></a></p>
+<p>The obvious answer is to use JCL condition code processing, possibly
+running
+a Rexx exec at the end of each job to perform error recovery, message
+issuing,
+etc. See <a href="#ISPFrc">the ISPF in batch </a>discussion for more
+information.
+</p>
+<p>Another solution if the JCL is part of a single application is to
+pass
+checkpoint information between an application server and executing
+tasks in
+a dataset. E.g. A server may create and prime a checkpoint dataset, and
+then
+submit a job that updates the dataset with diagnostic information that
+the
+server will interrogate when the job has finished.</p>
+<p>Jon Alexander &lt;johnalex@AOL.COM&gt; writes:</p>
+<p>SDSF offers a batch interface. I don't have the documentation here
+at home,
+but it can be found as a whole chapter in the SDSF Users Guide (Chapter
+15
+seems to stick out in my head). I can't swear that you can
+"interrogate" sysout
+data or condition codes from this interface, so you will need to
+validate
+this also. If you can, then you can build a set of REXX to call this
+interface
+from within a TSO environment.</p>
+<p>HOWEVER, you must still consider how you will implement this
+facility.
+Let's say that you want to monitor the majority of your batch work. You
+must
+"schedule" this routine to run after every single batch task, inputting
+the
+jobname and JES number for the SDd. This is not an easy task from
+within CA-7...</p>
+<p>CA's (formerly Legent's) JOBTRAC scheduling product provides a
+facility
+to run a REXX routine at the termination of each batch event, and also
+provides
+an interface to their "SDSF counterpart" called SYSVIEW/E which will
+definitely
+allow you to display sysout text and conditions codes. They distribute
+a sample
+REXX with their maintenance tape that provides most of the code for
+what
+you would want to do, but I'm not sure you really want to change your
+production
+scheduler just to solve this one problem.</p>
+<p>So, to make a long answer even longer, I would recommend that you
+get away
+from looking at the SDSF data, and possibly try to exploit one of the
+following:</p>
+<p>- Implement the SHARE sample of an IEFACTRT exit that generates WTOs
+with
+step condition code results, and use your local automation package to
+intercept
+the WTO and perform an automation process.</p>
+<p>- See if you can exploit CA-11 or CA-7 as far as a user exit point
+or extracting
+their database info, and take actions based on that </p>
+<p>- Implement your own IEFACTRT exit (there are a lot of samples out
+there)
+to perform the actions you need (yeah, I know, I'd rather do it in REXX
+also)</p>
+<p>- Get with your CA rep and see if CA-7 will be incorporating any of
+the
+REXX technology that CA-JOBTRAC currently uses and possibly a time
+frame on
+the availability </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC11"><strong>Where are the Standard Rexx I/O functions</strong></a></p>
+<p>Linein(), Lineout(), Stream() etc. have not been implemented in
+MVS/Rexx
+*as far as I am aware*. I/O can be done using the functionality of
+EXECIO.<br>
+A function package giving I/O functions for the OE environment only is
+available
+from IBM's <a
+ href="http://www14.software.ibm.com/webapp/download/downloadaz.jsp">Download
+website</a>. </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC12"><strong>How do I replicate CLIST's WRITENR
+functionality?
+</strong></a></p>
+<p>The Rexx say command places a carriage return and line feed at the
+end
+of each say command execution.<br>
+Some suggestions for creating a say command that behaves in the same
+way as
+CLIST's WRITENR are:</p>
+<p>Use a CLIST call.</p>
+<p>Use CHAROUT(). However this I/O function is not implemented in
+MVS/Rexx.</p>
+<p>The free utility XWRITENR (and also XPROC) are available from <a
+ href="ftp://ftp.mackinney.com/freebies/">ftp.mackinney.com </a>and
+the <a href="http://members.aol.com/cbttape">CBT tape </a><br>
+</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C1Outtrap"><strong>Why does Outtrap() not trap all output </strong></a></p>
+<p>The Outtrap() function does not trap output written directly to the
+screen
+by the TPUT macro, but only traps output from the PUTLINE macro. Use
+PUTLINE
+when writing assembler programs, and your program will be of more use
+in a
+Rexx environment. </p>
+<p>TSO Session Manager can be used to trap and manage all output that
+is normally
+written to the screen. Session Manager may require some setting up by
+your
+Systems Programer, who will have to look things up in the TSO manuals.</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C1EXECIO"><strong>EXECIO, why does it require 'Enter' more than
+once
+</strong></a></p>
+<p>When using "EXECIO * DISKW DDNAME", Rexx will continue pulling input
+from
+the stack and from terminal input (depending on the users TSO PROMPT()
+value)
+until it gets a null line. So a users will have to hit enter once to
+generate
+a null line. </p>
+<p>Solutions are: </p>
+<ul>
+  <li>Queue a null line before writing data from the stack.</li>
+  <li>Use the Queued() built in function instead of '*'.</li>
+  <li>Only EXECIO the required number of lines from terminal input.<br>
+E.g.<br>
+    <code>"EXECIO 1 DISKR DDNAME (FINIS)"</code> will only read
+a single line from the stack or terminal input.<br>
+    <code>"EXECIO "queued()" DISKW DDNAME (FINIS)"</code> will
+write the entire stack without requiring a null line to terminate
+output.</li>
+  <li>See also <a href="#RTFToC23">EXECIO</a> under Style.<br>
+  </li>
+</ul>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C1LisDS"><strong>How do I List Datasets and PDS members. </strong></a></p>
+<p>There are various methods for listing datasets and PDS members.</p>
+<ul>
+  <li>LISTDS - TSO dataset list command. Use the MEMBERS subcommand
+to get the members of a PDS. </li>
+  <li>LM utilities - ISPF library management utilities. Use LMMLIST
+with LMINIT to list the members. See ISPF services manual for details. </li>
+  <li>EXECIO of the PDS directory. A PDS directory can be allocated
+(LRECL=256) and read with EXECIO. This method does not work with PDSEs
+and cannot be guaranteed to work in the future. </li>
+  <li>Create your own access routines in assembler using the BPAM
+access method. </li>
+  <li>CSI - Catalog Search Interface. A high performance catalog
+search routine shipped by IBM. Use the LINKMVS environment to use
+it.</li>
+  <li>FDR - Dataset management tools. Innovations FDR package supplies
+a tool for reporting upon datasets (FDREPORT) that can be customised
+for use with Rexx under TSO. <br>
+  </li>
+</ul>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C1spool"><strong>How do I access data held on the JES spool.</strong></a></p>
+<p>JES3 sites can extract data off of the JES3 spool using E-JES.</p>
+<p>The TSO STATUS command gives limited information about jobs on the
+spool.
+The TSO OUTPUT command can reteive some data from the spool. The&nbsp;
+TSO
+CANCEL command can be used to stop jobs, and TSO SUBMIT to them. </p>
+<p>Brave souls can try the JES interface macros. Try looking at the <a
+ href="http://www.cbttape.org">CBTTape</a> for examples.</p>
+<p>JES2 users can brave the perils of SDSF in batch or other third
+party products</p>
+<p><a name="C1OddRcs"><strong><img src="../Pics/fish4.gif" width="45"
+ height="20">What do unusual return codes such as -3 and 0196 mean?</strong></a></p>
+<p>Basically they are either decimalised abend codes or indicate a
+problem
+with the environment.</p>
+<p>E.g. 0196 is decimal for hex 0C4, -3 indicates external environment
+not
+found. This is explained further in the Rexx manuals.</p>
+<p><a name="C1MacroParms"><strong><img src="../Pics/fish4.gif"
+ width="45" height="20">How do I pass parms to my ISPF Edit macro.</strong></a></p>
+<p>From command line calls use ISPEXEC "MACRO (parms)"</p>
+<p>From ISPEXEC EDIT call use VPUT and VGET<br>
+</p>
+<p><a name="C1Parse_ARG"><strong><img
+ src="file:///data/Webpages/Pics/fish4.gif" width="45" height="20">Why
+are my procedure arguments in upper case.<br>
+</strong></a></p>
+<strong style="font-weight: normal;">It may be because you are&nbsp;
+using <code>ARG</code> instead of <code>PARSE ARG</code></strong><br>
+<strong style="font-weight: normal;"></strong><code>PARSE ARG arg01 ,
+arg02 /* Arguments parsed with no uppercasing */<br>
+ARG arg01, arg02 /* arguments are uppercased */ </code><br>
+<br>
+Also note that the command line on most panels has CAPS(ON) set.
+Notable execptions (where case is preserved) <br>
+are ISPF edit and ISPF 6.<br>
+<br>
+<hr>
+<h2 align="center"><a name="C2Environs">Rexx and Different environments.</a></h2>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C2OEServ"><strong>OS/390 Unix System Services </strong></a></p>
+<p>address SYSCALL and address SH give you the ability to run execs
+that use
+OpenEdition MVS services. From outside of the shell use the Syscall()
+function
+to activate the environment.</p>
+<p>See Manual 'Using REXX to Access Unix System Services.' (or whatever
+its
+called this week).</p>
+<p>There are some pitfalls in this environment:</p>
+<ul>
+  <li>External names are uppercased. So RXGDGV() will work whilst
+rxgdgv() will fail not found.</li>
+  <li>Newly created executables may need to be made executable with
+a 'chmod' command.</li>
+  <li>The syscall environment initialises some variables which may
+be the same as those you use. <br>
+See <code>MTM_RDWR</code> in the mount example below. </li>
+  <li>The method of passing variables into the environment calls
+is different from 'classic' MVS calls. <br>
+E.g. mount example.
+    <pre>/* REXX mount example */<br>path = /tmp/testpath/mountpoint<br>dsn  = 'HFS.TEST.MOUNT'<br>address SYSCALL "mount (path) (dsn) HFS "MTM_RDWR<br>say 'Rc='rc 'Retval='retval 'Errno='errno</pre>
+  </li>
+  <li>Command return codes are not exactly passed via the usual rc
+symbol, but through new symbols retval and errno. </li>
+  <li>The syscall environment initialises __argv. and __environment.
+stems. </li>
+</ul>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC17"><strong>ISPF Services</strong></a></p>
+<p><code>address ISPEXEC</code> is detailed in the REXX and ISPF
+manuals.
+Examples can be found using the <code>MODEL</code>command in the ISPF
+editor.
+</p>
+<p>Some specific areas covered by ISPF services are: </p>
+<ul>
+  <li>PDS interrogation and manipulation using the LM utilities E.g.
+LMCOPY to copy datasets and PDS members.</li>
+  <li>ISPF table access with the TB utilities. E.g. TBSCAN to find
+a table record.</li>
+  <li>Edit and Browse with ISPF EDIT and ISPF EDIT macros. </li>
+  <li>Panel services with DISPLAY, ADDPOP, and others.</li>
+</ul>
+There is a known problem in ISPF table services, where a freed table
+may not
+be truly free (its ISPF trying to be eficient), causing the TSO FREE to
+fail.
+To avoid the problem, open a fake table, e.g. ADDRESS ISPEXEC "TBOPEN
+FAKETAB
+LIBRARY(FAKELIB) NOWRITE"<br>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="ISPFRc"><strong>ISPF Services in Batch </strong></a></p>
+<p>ISPF services can be used by a batch job, although panel display and
+user
+interaction may be a little limited. Use ISPSTART running under
+IKJEFT01 to
+initiate the ISPF environment, see the manuals for this. </p>
+<p>There can be some difficulties when ISPF return codes &gt;=8 cause
+ISPF
+to terminate. Firstly, the termination will pass a zero RC back to the
+batch
+job, most terminations can be controlled using ISPEXEC CONTROL, see
+below
+for an example. Secondly, the ISPF RC has to be passed back via profile
+variable
+ZISPFRC, as the Rexx RC is ignored by ISPF.</p>
+<p>Lastly, BDISPMAX and BREDIMAX errors, often caused by ISPF trying to
+display
+a panel (which it can't in batch, of course) don't appear to be
+controlled
+by CONTROL, and cause abending programs to return zero RCs to the batch
+job.
+I suggest setting RC=4 as normal completion, and treating RC=0 as an
+abend
+in the job control. </p>
+<pre>/* REXX - Controlling ISPF errors example */<br>address ISPEXEC                                                    <br>                                                                   <br>/* If an ISPF error occurs, then return control to the Rexx */     <br>say 'Setting CONTROL ERRORS RETURN'                                <br>"CONTROL ERRORS RETURN"                                            <br>                                                                   <br>/* Call LMFREE for a nonexistent dataid. Returns rc = 10 ,         <br>   which is not usually terminated by ISPF anyway */               <br>say 'Calling LMFREE'                                               <br>"LMFREE DATAID(EEYORE)"                                            <br>say 'LMFREE rc='rc                                                 <br>                                                                   <br>/* Call LMOPEN with a bad parameter. Returns rc = 20 ,             <br>   which causes ISPF to cancel and is thus influenced by           <br>   the CONTROL ERRORS RETURN */                                    <br>say 'Calling LMINIT'                                               <br>"LMINIT DATAID(PIGLET) DATAFISH('HADDOCK')"                        <br>say 'LMINIT rc='rc                                              <br>                                                                   <br>/* Call EDIT with a non existent edit macro. I cannot get this to  <br>   return control to the Rexx, and it terminates here with the     <br>   'ISPP330 BDISPMAX exceeded' message. The JCL completion code    <br>   is an not very useful '00' */                                   <br>say 'Calling EDIT'                                                 <br>"EDIT DATASET('NWH.GENERAL.EXEC(ISPFTEST)') MACRO(MCGYVER)"        <br>say 'EDIT rc='rc                                                   <br>                                                                   <br>/* Pass the current value of rc back to job control */             <br>zispfrc = rc                                                       <br>address ISPEXEC "VPUT (ZISPFRC)"                                   <br>                                                                   <br>/* This EXIT return code will not make it back past ISPF, but it   <br>   would have if just TSO was involved. As ISPF is active, it      <br>   is overridden with the value of ZISPFRC, and a message appears  <br>   in the SYSTSPRT output */                                       <br>exit 12                                                            <br></pre>
+<p>See the <a href="#Appendix">Appendices</a> for an example JCL
+procedure.</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC18"><strong>Load Modules (I.e. Assembled programs) </strong></a></p>
+<p>address MVS, LINKMVS, ATTCHMVS, etc. are detailed in REXX manuals.
+These
+allow the user to pass parameter lists into the load module.</p>
+<p>Creating and accessing Rexx external functions using compilers and
+assembler
+is also documented in the Rexx manuals. Examples of using the IRXEXCOM
+interface
+are on the CBTTape.</p>
+<p>It is well worth understanding APF authorisation for load modules.
+Read
+the manuals for full details, but briefly, APF authority abends are
+usually
+a result of the loss of an authorised environment caused by 'dirty'
+programs
+in the user address space or non APF authorised libraries in the
+STEPLIB
+concatenation.<br>
+Some items to look out for are: </p>
+<ul>
+  <li>The SETPROG console command. </li>
+  <li>TSOCMDxx PARMLIB member for TSO command authorisation. </li>
+  <li>Assembling programs with AC=1 </li>
+  <li>'Problem' programs. A problem program is any non APF authorised
+program.<br>
+  </li>
+</ul>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC10"><strong>SQL</strong></a></p>
+<p>DB2 for zOS has a Rexx interface, introduced with DB2 version 5, and
+described
+in the latest IBM DB2 manuals. The interface supplies the DSNREXX
+&nbsp;environment
+(as in ADDRESS DSNREXX "EXECSQL SELECT FROM yadda.yadda").&nbsp; <br>
+</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C2consl1"><strong>Console Command Environment </strong></a></p>
+<p>Kevin McGrath writes:<br>
+MVS TSO/REXX will issue MVS commands using TSO's MCS console support.
+Look
+in Appendix "D" and "E" of the TSO/E REXX Reference. You must run under
+TSO,
+either interactive or batch. REXX provides a host command environment.
+I've
+attached a simple example. </p>
+<pre><code>/* REXX under TSO */<br>Parse arg command<br>Address TSO "CONSOLE ACTIVATE"        /*  start a console session.   */<br>Address CONSOLE "CART(REXXMVS)"       /*  Establish a CART token.    */<br>Address CONSOLE command               /*  Issue command.             */<br>getcode = GETMSG('prtmsg.','sol','REXXMVS',,60) /* get response      */<br>If getcode = 0 then                   /*  got response?              */<br>  Do i = 1 to prtmsg.0<br>    Say prtmsg.i                      /*  do something with response */<br>  End<br>Else<br>  Say "GETMSG ERROR RETRIEVING MESSAGE.  RETURN CODE IS" GETCODE<br>Address TSO "CONSOLE DEACTIVATE"      /* stop the console session.   */<br>Exit</code><br></pre>
+<p>Neil Hancock adds: <br>
+Your security setup may restrict use of the console environment. The
+relevant
+RACF profile is listable using RLIST TSOAUTH CONSOLE ALL. There are
+also user
+profile OPERPARM segments involved. <br>
+Note that solicited messages are not necessarily available from
+subsystems
+such as JES, RACF, etc. You may have to issue the command, and process
+unsolicited
+messages to retrieve information from subsystem commands. </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC19"><strong>Rexx aware editors</strong> </a></p>
+<p>ISPF edit supplies a color hilite facility that is a must if it is
+available.
+ISPF edit also supplies models for ISPEXEC services, although you may
+have
+to adjust the style to your own. Many *nix editors understand Rexx, and
+Kate
+(part of KDE) uses a simple XML markup that allows highlighting of any
+language.
+</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC20"><strong>Rexx Compilers</strong></a></p>
+<p>There are Rexx compilers available, including one from IBM. Ask on
+the
+newsgroup for Information on what is currently available. </p>
+<p>A freeware utility that converts Rexx source into a tokenised form
+(as
+is used by LLA / VLF) is rumoured to exist.</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C2CGI"><strong>Using Rexx as CGI programs with the Web Server. </strong></a><br>
+Rexx can be used to create CGI programs that access MVS based resources
+for
+Web browser based users. <br>
+All the Rexx program is doing is to write a dynamic html page to the
+POSIX
+sysout stream. This can be done using the Rexx say command. <br>
+The BonusPak supplies two shell commands; <b>cgiutils</b> for writing
+http
+headers (for passing html versions and cookies to the browser, etc), and<b>cgiparse</b>
+for reading environment variables, including forms data.<br>
+For the GET CGI method, the CGI parameters are available in environment
+variable
+QUERY_STRING. <br>
+Environment variables are available in the Rexx stemmed variable <b>__environment.</b>
+and the parms can be extracted with the parse command. Note that use of
+interpret
+to extract parms is insecure. A user may manage to pass raw rexx
+commands
+into the CGI exec. <br>
+For pre OS/390 V1 R3 systems, the Rexx say command wraps at 80
+characters.
+Use SYSCALL "write .." instead. <br>
+Some browsers convert special characters to an escaped notation. <br>
+Access to Classic MVS resources can be done by using Rexx function <code>shcmd</code>
+to trap the output from commands run under TSO. <br>
+Commands can be run under TSO using the <code>tsocmd</code> shell
+command.
+<br>
+Both shcmd and tsocmd are available from the IBM Kingston ftp site. </p>
+<hr>
+<h2 align="center"><a name="C3Style">Style. </a></h2>
+<p>These style hints are mostly aimed at programmers from other MVS and
+TSO
+languages, especially CLIST. Your site may have its own conventions and
+these
+should take precedence over anything said here. You may also prefer to
+work
+in your own style, and that too is perfectly acceptable.<br>
+</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC22"><strong>What are the most effective ways to use
+comments?
+</strong></a></p>
+<ul>
+  <li>You must have REXX as part of the first line of Rexx, which
+must also be a comment. It seems sensible to take the opportunity
+to say something about what the program is about in this opening
+comment. </li>
+  <li>Only open and close a comment that goes across many lines once.
+There are no real performance benefits in this, only your code
+will contain fewer extraneous characters, and this will help you
+see the wood for the trees. </li>
+  <li>It makes little sense to comment every line no matter how
+trivial. Rexx isn't assembler and most commands are self evident. </li>
+  <li>Consider commenting what is being terminated at an END statement,
+particularly select statements and do loops that cover more than one
+screenfull of program. </li>
+  <li>Don't squeeze comments down the right hand side of the code. <br>
+This restricts the insertion of maintenance code, and more
+importantly, the restricted space causes the comments to become
+abbreviated
+past the point of becoming cryptic. <br>
+  </li>
+</ul>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC23"><strong>EXECIO.</strong></a></p>
+<p>Close any brackets. It makes the code look neater.</p>
+<p>Use <code>address MVS "EXECIO"</code> in preference to <code>address
+TSO "EXECIO"</code>. You then avoid unexpected occurances of rc(-3)
+when you run the exec under IRXJCL instead of IKJEFT01.</p>
+<p>Tim Larsen &lt;DKDDBNGX@IBMMAIL.COM&gt; writes:<br>
+With DISKW - use the queued() built-in, instead of a null-record and
+"*".
+<br>
+If you forget the null-record ("QUEUE'') you will get a prompt,
+depending
+on the TSO PROFILE!<br>
+E.g. <font size="2" face="Courier New">"EXECIO" queued() "DISKW DDNAME
+(FINIS)"<br>
+</font></p>
+<p><font size="2" face="Courier New"><br>
+</font></p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC24"><strong>What case should I program in, upper or lower?
+</strong></a><strong><br>
+</strong>Readability can be improved by writing Rexx as if it were a
+human
+language and not as if it were JCL or assembly code. Avoid having the
+entire
+program in upper case, this is known as shouting and does nothing to
+help
+readability. It is common to write commands addressed to external
+environments
+in upper case, and to use mixed case for Rexx commands and symbols.<br>
+</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC25"><strong>Functions and procedures</strong></a></p>
+<p>If a call returns a value that is not a return code, it may be
+better to
+call it as a function rather than a procedure.</p>
+<p>E.g. Consider:<font size="2" face="Courier New"> if
+Linein(needle,haystack)
+then say 'Hello'</font> <br>
+versus:<font size="2" face="Courier New"> call Linein needle,haystack<br>
+if result = 1 then say 'Hello'</font></p>
+<p>Make the names of functions and procedures meaningful </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC26"><strong>Logical (Boolean) variables and functions.</strong></a><strong><br>
+</strong>Symbols with a value of 1 are logically true, 0 logically
+false.
+All other values give an error when tested for logical truth.</p>
+<p>Functions may return logical values, but don't confuse functions
+returning
+logical values with those that return numeric values.</p>
+<p>E.g. <font size="2" face="Courier New">if Datatype(var,'NUM') then
+say
+'Hello' /* Is OK */<br>
+if Pos(needle,haystack) then say 'Hello' /* May abend */</font></p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC27"><strong>Symbolic names. </strong></a><strong><br>
+</strong>Symbolic (or variable) names are not limited to eight
+characters
+as in some other languages, this allows more scope for meaningful
+names. The
+names used will depend largely on the programmers preferences and style
+of
+code writing, but here are some suggestions to consider.</p>
+<p>Use long variable names and separate words with an underscore.<br>
+E.g. <font size="2" face="Courier New">Table_name = 'MAILTAB' </font><br>
+Underscores are a useful way of hiding variables from ISPF. </p>
+<p>Use i,j,k,etc as loop control symbols. Execs that do not hide
+symbols using
+the procedure command may suffer from reuse of loop control symbols.<br>
+E.g. <font size="2" face="Courier New">do i = 1 to 10 </font></p>
+<p>Prefix variable names with specific characters to show the type of
+data
+the variable contains, such as logical, numeric, flags, etc. <br>
+I often prefix variable names with '?' to stop variable substitution
+occurring
+if stemmed variables. <br>
+E.g. <br>
+<font size="2" face="Courier New">count = 2 ; year = '1945' ;
+stem.count.?year
+= year /* STEM.2.?YEAR = '1945' */ <br>
+Bboolean = 1; if Bboolean then say 'hello' <br>
+Fflag = 'A'; if Fflag = 'A' then say 'hello' <br>
+@address = STORAGE(something) <br>
+#numeric = 10 + 12 </font></p>
+<p>See also the section on <a href="#C3AlphaNum">using
+non-alphanumeric characters
+</a></p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC28"><strong>Internal and external calls </strong></a><strong><br>
+</strong>Rexx allows calls to be made to execs that reside outside of
+the
+currently executing exec. This allows programmers to use prewritten
+modules,
+and to split large amounts of code up into manageable chunks. However
+there
+is a performance overhead in doing this. Here are some other points to
+consider:
+</p>
+<p>Some aspects of an exec may be relevant to other execs, and you may
+wish
+to supply a routine that is usable by other execs performing similar
+tasks.
+Consider creating external routines that supply a robust and generic
+service
+(e.g. catalogue listing, mail sending, interfaces to data, etc.) so
+that other
+developers may benefit from reduced development time. </p>
+<p>Exit external routines with RETURN rather than EXIT. This
+facilitates the
+copying of the routine into an exec for performance benefits. </p>
+<p>Don't use an external call to a routine that is called recursively,
+the
+resulting I/O will drop the exec performance. </p>
+<p>The inability to share variables across external procedures may lead
+you
+to choose to use internal procedures over external ones . </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC29"><strong>How can I improve performance of my exec?</strong></a><strong><br>
+</strong>In general, using an appropriate and well tuned
+algorythm/solution
+is better than using specific 'hacks'. </p>
+<p>Address external environments directly using ADDRESS. For multiple
+calls
+to the same environment set the environment before entering into the
+multiple
+calls. <br>
+E.g. <code>address TSO "ALLOC FI(...) DA(....) SHR"</code></p>
+<p>Internalise external routines that are called repeatedly. Then they
+won't
+have to be loaded and tokenised by the interpreter every time they are
+called.
+</p>
+<p>Use single letter vars for loop control. TSO/Rexx has some fast-path
+optimisation
+for code such as DO I = 1 to 1000.</p>
+<p>Using the string functions ( POS(), LEFT(), etc ) on a single very
+large
+string, rather than searching through many stemmed vars.</p>
+<p>Use terse coding, avoid unnecessary commands.<br>
+E.g. Consider:<br>
+<code>if symbol = 'FRED' then say 'Hello'<br>
+</code>Versus:<br>
+<code>if symbol = 'FRED' then ,<br>
+do<br>
+say 'Hello'<br>
+end</code></p>
+<p>Embed function calls within each other rather than build up a
+variable
+over several lines of code.<br>
+E.g. <code>junk = Left(Overlay('A',Userid()||Random(999),1,1),8)</code></p>
+<p>Use a compiler. Expect 100% improvement for number maniplulation
+(adding
+and whatnot), 30% for string manipulation (using the string functions),
+and
+no real improvement when interfacing to external environments.</p>
+<p>Performance test your code using the SYSVAR('SYSCPU') function and <strong>not</strong>
+the TIME() function. </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="RTFToC30"><strong>How can my systems programmer improve
+performance.
+</strong></a></p>
+<p>Use VLF. See IKJEXEC in Init and Tuning manual. Note that VLF is not
+used
+for external procedure and function calls, only the EXEC interface,
+like what
+is used when you TSO EXEC MYLIB(MYEXEC).</p>
+<p>Use the environment tables in SAMPLIB if you have environments that
+are
+not part of the distribution tables. </p>
+<p>Supply well written external routines for non trivial tasks
+performed by
+user code. This may deter users from writing inefficient code to
+perform the
+task themselves. </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C3Tricks"><strong>What obscure coding tricks are there.<br>
+</strong></a></p>
+<p>These tricks are not necessarily recommended, as they can reduce the
+readability
+of the code. They can also speed things up, particularly those tricks
+using
+PARSE.<br>
+</p>
+<p>Use a boolean check.<br>
+<font size="2" face="Courier New">sign = TRANSLATE( (var&lt;0) , '+-' ,
+'01'
+)</font><br>
+<font size="2" face="Courier New">boolvar = (test=true)</font></p>
+<p>Use the TRANSLATE() function to reorder or insert chars in a string.
+(Thanks
+to Doug Nadel)<br>
+<code><font size="2" face="Courier New">say
+TRANSLATE('ab,cde,fgh,ijk,lmn,opq,rst,uvw,xyz'
+, myNumber , 'abcdefghijklmnopqrstuvwxyz')</font><font size="2"><br>
+</font><font size="2" face="Courier New">say TRANSLATE('abcdefgh
+ijklmnop
+qrstuvwx yz123456' , hexChars , 'abcdefghijklmnopqrstuvwxyz123456')</font></code></p>
+<p>Use functions such as DATE() to check if some data conforms to a
+type.
+Use ON SYNTAX to trap the error.<br>
+<code><font size="2" face="Courier New">junk = DATE(,testDate,'S') /*
+Will
+give a syntax error is testDate is not a standard date */</font></code></p>
+<p>The many variations of DO. Read the Rexx Reference and Rexx Guide
+for inspiration.</p>
+<p>Use PARSE to initialise variables.<br>
+<code><font size="2" face="Courier New">parse value '1 2 3 6 4' with
+var1
+var2 var3 var4 var5 .</font></code></p>
+<p>Use PARSE instead of SUBSTR()<font size="2" face="Courier New">.<br>
+<code>parse var string =(colA) var1 +(lenA) .,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=(colB) var2 +(lenB) .,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=(colC) var3 +(lenC) .&nbsp;</code></font><font face="Courier New"><br>
+</font>is functionally equivalent to:&nbsp;<code><font
+ face="Courier New"><br>
+</font><font size="2" face="Courier New">var1 =
+SUBSTR(string,colA,lenA)&nbsp;<br>
+var2 = SUBSTR(string,colB,lenB)<br>
+var3 = SUBSTR(string,colC,lenC)&nbsp;</font></code></p>
+<p>Use PARSE to split out bits from a string:<br>
+<font size="2" face="Courier New"><code><font
+ face="Courier New, Courier, monospace">parse value X2B(C2X('AA'x))
+,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with x80 2 x40 3 x20 4 x10 5 x08 6
+x04
+7 x02 8 x01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></code>&nbsp;&nbsp;&nbsp;
+<br>
+</font></p>
+<p> Use PARSE to increment a stem counter and assign a value to the new
+last
+stem (Attributed to &nbsp;Les Koehler @ IBM Tampa).<br>
+<small><font face="Courier New, Courier, monospace"><code>stem.0 = 1
+&nbsp;;
+stem.1 = 'cheese'<br>
+<br>
+parse value &nbsp; &nbsp; stem.0+1 &nbsp;'mice' &nbsp; &nbsp;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;with &nbsp;1 &nbsp;x &nbsp; &nbsp; &nbsp;
+&nbsp;
+stem.x &nbsp; &nbsp;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp;stem.0 &nbsp;
+&nbsp;.
+&nbsp; &nbsp; &nbsp; &nbsp; ;<br>
+<br>
+say stem.0 /* ==&gt; '2' &nbsp; &nbsp; &nbsp;*/ <br>
+say stem.1 /* ==&gt; 'cheese' */ <br>
+say stem.2 /* ==&gt; 'mice' &nbsp; */ <br>
+say x &nbsp; &nbsp; &nbsp;/* ==&gt; '2' &nbsp; &nbsp; &nbsp;*/ <br>
+</code></font></small></p>
+<p><small><font face="Courier New, Courier, monospace"><strong></strong></font></small>&nbsp;</p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C3AlphaNum"><strong>Using Non-Alphanumeric characters. </strong></a></p>
+<p>Stephen Bacher writes on the subject of using non-alphanumeric
+characters:
+<br>
+"I disagree strongly with (... the use of ...) non-alphameric
+characters (like
+! # % ) in REXX variable names. Extensions to REXX, including
+object-oriented
+extensions, may use these characters. Including them in variable names
+is
+asking for eventual breakage IMHO." </p>
+<p>Another reason to avoid using the EBCDIC special characters (these
+include
+currency symbols, hash, at, double quotes, etc.) is because these
+characters
+may have different display meanings in foreign EBCDIC chacacter sets. </p>
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
+ name="C3Other"><strong>Are there any other style hints? </strong></a></p>
+<ul>
+  <li>Leave space at the end of line for continuations and short
+'date changed' comments. </li>
+  <li>Avoid ambiguous or confusing abbreviations in symbol names
+and comments. <br>
+E.g. 'lst' and '1st' appear similar, and will a casual reader
+know whether a symbol 'lstPointer' is referring to a 'list pointer'
+or a 'last pointer' </li>
+  <li>See the <a href="RexxStyleGuide.html">Style Guide</a> for a more
+detailed style discussion</li>
+</ul>
+<hr>
+<h1 align="center"><a name="Appendix">Appendices. </a></h1>
+<hr>
+<h2 align="center"><a name="ACode">Code Examples</a></h2>
+<p>This is a <strong>sample JCL</strong> procedure to run <strong>ISPF
+in
+batch.</strong></p>
+<pre>//ISPFPROC PROC PREFU='user.lib',PREFS='SYS1',CMD=<br>//ISPF&nbsp;&nbsp;&nbsp; EXEC PGM=IKJEFT01,DYNAMNBR=30,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PARM='ISPSTART CMD(&amp;CMD)'&nbsp;&nbsp;<br>//*<br>//ISPPROF DD DISP=NEW,UNIT=SYSSQ,SPACE=(TRK,(1,1,1)),<br>//        DCB=(LRECL=80,BLKSIZE=8000,RECFM=FBA)<br>//*<br>//SYSEXEC DD DISP=SHR,DSN=&amp;PREFU..EXEC<br>//        DD DISP=SHR,DSN=&amp;PREFS..SISPEXEC<br>//SYSPROC DD DISP=SHR,DSN=&amp;PREFS..SISPCLIB<br>//ISPPLIB DD DISP=SHR,DSN=&amp;PREFU..PANELS<br>//        DD DISP=SHR,DSN=&amp;PREFS..SISPPENU<br>//ISPMLIB DD DISP=SHR,DSN=&amp;PREFU..MSGS<br>//        DD DISP=SHR,DSN=&amp;PREFS..SISPMENU<br>//ISPSLIB DD DISP=SHR,DSN=&amp;PREFU..SKELS <br>//        DD DISP=SHR,DSN=&amp;PREFS..SISPSENU<br>//ISPTLIB DD DISP=SHR,DSN=&amp;PREFU..TABLES<br>//        DD DISP=SHR,DSN=&amp;PREFS..SISPTENU<br>//ISPTABL DD DISP=SHR,DSN=&amp;PREFU..TABLES<br>//ISPLOG  DD DUMMY,DCB=(RECFM=VA,LRECL=125,BLKSIZE=129)<br>//ISPLIST DD DUMMY,DCB=(RECFM=VA,LRECL=125,BLKSIZE=129)<br>//ISPLST1 DD DISP=NEW,UNIT=SYSSQ,SPACE=(CYL,(1,1)),<br>//        DCB=(LRECL=121,BLKSIZE=1210,RECFM=FBA)<br>//ISPLST2 DD DISP=NEW,UNIT=SYSSQ,SPACE=(CYL,(1,1)),<br>//        DCB=(LRECL=121,BLKSIZE=1210,RECFM=FBA)<br>//ISPCTL1 DD DISP=NEW,UNIT=SYSSQ,SPACE=(CYL,(1,1)),<br>//        DCB=(LRECL=80,BLKSIZE=800,RECFM=FB)<br>//ISPCTL2 DD DISP=NEW,UNIT=SYSSQ,SPACE=(CYL,(1,1)),<br>//        DCB=(LRECL=80,BLKSIZE=800,RECFM=FB)<br>//ISPWRK1 DD DISP=NEW,UNIT=SYSSQ,SPACE=(CYL,(1,1)),<br>//        DCB=(LRECL=256,BLKSIZE=2560,RECFM=FB)<br>//ISPWRK2 DD DISP=NEW,UNIT=SYSSQ,SPACE=(CYL,(1,1)),<br>//        DCB=(LRECL=256,BLKSIZE=2560,RECFM=FB)<br>//*<br>//SYSUDUMP DD DUMMY<br>//SYSTSPRT DD SYSOUT=Q<br>//SYSPRINT DD DUMMY<br>//SYSTSIN  DD DUMMY<br>// PEND</pre>
+<p>And run it thus:</p>
+<pre>//TESTISPF EXEC ISPFPROC,<br>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PARM.ISPF='ISPSTART CMD(%REXXPROG TESTPARM)', <br>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PREFU='ISP'<br>//* or alternativly, <br>//TESTISPF EXEC ISPFPROC,<br>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CMD='%TESTPROG TESTPARM'<br>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PREFU='ISP'&nbsp;&nbsp;</pre>
+<p>If ISPF is not needed, try using <strong>IRXJCL</strong>:</p>
+<pre>//IRXJCL1&nbsp; EXEC PGM=IRXJCL,PARM='%execname'<br>//SYSEXEC&nbsp; DD DISP=SHR,DSN=your.exec.library<br>//SYSPRINT DD SYSOUT=*<br>//SYSTSPRT DD SYSOUT=*<br></pre>
+<p>or <strong>TSO in batch</strong>:</p>
+<pre>//IRXTSO&nbsp;&nbsp; EXEC PGM=IKJEFT01<br>//* You could use PARM='%execname testparms' on exec statement<br>//SYSEXEC&nbsp; DD&nbsp;DISP=SHR,DSN=your.exec.library<br>//SYSTSPRT DD&nbsp; SYSOUT = *<br>//SYSTSIN&nbsp; DD&nbsp; *<br>%execname testparms<br>/*<br>//* You could run more than one exec sequentially from SYSTSIN<br>//* You can also run straight TSO commands like TSO PROF PREF(FRED)</pre>
+<p>This <strong>Exec </strong>shows how to temporarily <strong>LIBDEF</strong>
+ISPF datasets to your session, <strong>ALTLIB</strong> an Exec library
+to
+your session, <strong>call an ISPF application </strong>(under a new
+application
+Id to avoid name collisions with other ISPF profile var. names), and
+then
+unstack the LIBDEFs, and deactivate the alternative Exec library.</p>
+<pre>address ISPEXEC "LIBDEF ISPPLIB DATASET ID('user.PANELS') STACK"<br>address ISPEXEC "LIBDEF ISPMLIB DATASET ID('user.MSGS')   STACK"<br>address ISPEXEC "LIBDEF ISPTLIB DATASET ID('user.TABLES') STACK"<br>address TSO     "ALTLIB ACTIVATE APPLICATION(EXEC) DATASET('user.EXEC')"<br>address ISPEXEC "SELECT CMD(%yourexec "your exec options") NEWAPPL(yourappl) PASSLIB"<br>address ISPEXEC "LIBDEF ISPTLIB"<br>address ISPEXEC "LIBDEF ISPMLIB"<br>address ISPEXEC "LIBDEF ISPPLIB"<br>address TSO     "ALTLIB DEACTIVATE APPLICATION(EXEC)"</pre>
+<hr>
+<h2 align="center"><a name="ARefs">Other Sources of Information.</a></h2>
+<p>Marist College hosts the ListServ Archives at <a
+ href="http://www.marist.edu/htbin/wlvindex?tso-rexx">http://www.marist.edu/htbin/wlvindex?tso-rexx</a><br>
+<a href="http://www.yahoo.com">Yahoo!</a> has a Rexx category that
+lists several
+Rexx information sites.<br>
+Rexx Book list. Try searching <a href="www.amazon.com">Amazon.</a><br>
+Rexx manuals, search the <a
+ href="http://www.s390.ibm.com/os390/bkserv/">IBM
+S390 Website</a>to find them online in PDF and HTML formats.<br>
+<a href="http://www.cbttape.org">CbtTape.org</a> has many useful
+utilities,
+including a list of <a href="http://www.cbttape.org/internet.phtml">Listserv
+lists.</a><br>
+Rexx newsgroup <a href="news:comp.lang.rexx">comp.lang.rexx </a>can
+be found
+via <a href="http://groups.google.com">Google</a></p>
+<p>ISPF has its own active listserv at <a
+ href="mailto:ISPF-L@listserv.nd.edu">ISPF-L@listserv.nd.edu</a>, Send
+message
+text '<strong>SUBSCRIBE ISPF-L </strong><em><strong>Your Name</strong></em>'
+to <a href="mailto:LISTSERV@listserv.nd.edu">LISTSERV@listserv.nd.edu</a>
+and await further instructions.</p>
+<hr>
+<h2 align="center"><a name="ASubscribe">Subscribing to the TSO-REXX List</a></h2>
+<p>Go to the <a href="http://www.marist.edu/htbin/wlvindex?tso-rexx">TSO-Rexx
+list archive</a>, scroll to the bottom of the page, and follow the
+instructions
+there.</p>
+<p>&nbsp;</p>
+<hr>
+<h2 align="center"><a name="AGlossary">Glossary </a></h2>
+<dl>
+  <dt>Generation Data Group. </dt>
+  <dd>A set of datasets referred to by their GDG base, and a generation
+number referring to the generation required. See MVS/Using datasets. </dd>
+  <dt>Built-in Function. </dt>
+  <dd>A standard Rexx function, e.g. SUBSTR(). </dd>
+  <dt>External Function. </dt>
+  <dd>An external Rexx function, either supplied with TSO/E, e.g.
+SYSVAR(), or supplied in a PDS in Rexx source or Load Module form,
+e.g. RXGDGV() in appendix C. </dd>
+  <dt>Internal Label. </dt>
+  <dd>A label within an exec, either hidden (with PROCEDURE without
+EXPOSE), or exposed. </dd>
+  <dt>Profile prefix. </dt>
+  <dd>A TSO environment variable. The users default HLQ, prefixed
+to unqualified datasets to make a qulified DSN </dd>
+  <dt>HLQ. </dt>
+  <dd>High Level Qualifier. The first qualifier in a fully qualified
+dataset name.</dd>
+  <dt>DTL </dt>
+  <dd>Dialog Tag Language. An SGML markup language used to define
+ISPF panels. DTL documents are converted into panels using the ISPDTLC
+compile utility.</dd>
+</dl>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3"
+   name=""
+   committed-date="2005-11-05T20:02:45.155036Z"
+   url="http://localhost/svn/home/WebPages/Computers/Applets/Reversi"
+   last-author="neil"
+   kind="dir"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="Reversi.html"
+   text-time="2005-06-30T22:50:05.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="82abff6f4f863db7580835d5eae9f7e8"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="ReversiPositionAnalyser.java"
+   text-time="2005-06-30T22:50:07.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="6e93e7871c4c8d2990d47a2ff5f61a0d"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="Reversi.class"
+   text-time="2005-06-30T22:50:05.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="a67d7a59a3aa73a8ff688f02c0f0d7aa"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="ReversiBackGround.gif"
+   text-time="2005-06-30T22:50:05.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="31767e2a9a6ec8876277d51bbe4d1e61"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="ReversiBoard.class"
+   text-time="2005-06-30T22:50:06.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="01c19eb2a001497b71e0e707f4f9ed42"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="Reversi.java"
+   text-time="2005-06-30T22:50:05.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="d1eb1837a11b520c78a99737f5220ee8"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="ReversiPlayer.class"
+   text-time="2005-06-30T22:50:07.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="d3f7e2c1cbcb978afa3f1cae5707d7a0"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="ReversiButtons.class"
+   text-time="2005-06-30T22:50:06.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="ab702c0b240dffe91530a7e494e04c8b"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="counter0.gif"
+   text-time="2005-06-30T22:50:07.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="333644d6282e32983fbf1c4a4baff504"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="counter1.gif"
+   text-time="2005-06-30T22:50:08.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="c13cebc0da1a6a9c1aa7c3482f4d560b"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="counter2.gif"
+   text-time="2005-06-30T22:50:08.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="ab99a155b81640aeb7f5b9e596a38843"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="ReversiPositionAnalyser.class"
+   text-time="2005-06-30T22:50:07.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="0f4cae0af5e1f873f0822269b67ed8fc"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="ReversiBoard.java"
+   text-time="2005-06-30T22:50:06.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="45d16720526ceb7ad1e97faec67150a5"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="ReversiPlayer.java"
+   text-time="2005-06-30T22:50:07.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="8d215332726ea6c92b3d8438a544b791"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="ReversiButtons.java"
+   text-time="2005-06-30T22:50:06.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="c5b1241c88816aece6136fdebabd9a7a"
+   last-author="neil"
+   kind="file"/>
+</wc-entries>

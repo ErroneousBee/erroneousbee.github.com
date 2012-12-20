@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3"
+   name=""
+   committed-date="2005-11-05T20:02:45.155036Z"
+   url="http://localhost/svn/home/WebPages/Computers/Applets/TicTacToe"
+   last-author="neil"
+   kind="dir"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="TicTacToe.java"
+   text-time="2005-06-30T22:50:09.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="c9bdd68c61a17f3ba472c94d3a668143"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="nought.bmp"
+   text-time="2005-06-30T22:50:10.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="5d97e0094f944a730fe39a5adc76e3f4"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="TicTacToe.html"
+   text-time="2005-06-30T22:50:08.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="4487d390aaa6d7745e10c7fa182b879b"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="TicTacToe.class"
+   text-time="2005-06-30T22:50:08.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="163638d014c0c62b4d47da1f49c2e3ec"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="cross.bmp"
+   text-time="2005-06-30T22:50:10.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="800e4b7299a7be477c3371dcc3edfe4c"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="TicTacToeBoard.java"
+   text-time="2005-06-30T22:50:09.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="63c69c9de7c6a5206f9f6198878e1a6d"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="HandleButton.java"
+   text-time="2005-06-30T22:50:08.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="81aeff2b9bdbcc1bd1ad0f27659b3367"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="TicTacToeBoard.class"
+   text-time="2005-06-30T22:50:09.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="aabf82033aaed352acf1e4794652f406"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+<entry
+   committed-rev="3"
+   name="HandleButton.class"
+   text-time="2005-06-30T22:50:08.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="e272e2e3c35f17c661dff07323442d7c"
+   last-author="neil"
+   kind="file"
+   prop-time="2005-11-05T20:02:30.000000Z"/>
+</wc-entries>

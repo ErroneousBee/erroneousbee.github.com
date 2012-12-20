@@ -1,0 +1,173 @@
+<html>
+<head>
+<meta http-equiv="Content-Type"  content="text/html; charset=iso-8859-1">
+<meta name="Author" content="Neil Hancock">
+<title>Neil's Computer Page</title>
+</head>
+
+<body>
+
+<h1 align="center">Neil's Computer Page </h1>
+
+<p align="center"><img src="../Pics/fishes1.gif" border=0></p>
+
+<p><a href="rexxfaq.html">Rexx FAQ </a>for Rexx on OS/390
+Mainframes, TSO, ISPF, etc.<br>
+This FAQ covers questions from the TSO-REXX list, for questions
+about Rexx in general, see the <a
+href="http://www.mindspring.com/~dave_martin/RexxFAQ.html">general
+Rexx FAQ. </a></p>
+
+<p><a href="RexxStyleGuide.html">Rexx Style Guide </a>More from
+the TSO-REXX list. </p>
+
+<p align="center"><img src="../Pics/fishes1.gif" border=0></p>
+<div align="left">
+<table border="1" width="100%">
+    <tr>
+        <th align="left">Rexx Source Samples </th>
+        <th align="left">Description </th>
+    </tr>
+    <tr>
+        <td><a href="Rexx/CSILCAT.rexx">CSILCAT.REXX</a></td>
+        <td width="70%">A function based upon IBMs samples to
+        retrieve catalog data using the Catalog Search Interface
+        (CSI) module IGGCSI00. You specify the fields (VOLSER
+        LRECL MGMTCLAS, etc) you want to retreive. See the bottom
+        of the code for details.</td>
+    </tr>
+    <tr>
+        <td width="30%"><a href="Rexx/DTLCOMP.rexx">DTLCOMP.REXX</a><p><a
+        href="Rexx/DTLPROF.txt">DTLPROF.TXT</a></p>
+        </td>
+        <td>How to compile multiple DTL sources without using the
+        ISPDTLC ISPF panel.</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/FILE.rexx">FILE.REXX</a></td>
+        <td>Yet another exec to outrap the output of a TSO
+        command output into a dynamically allocated file.</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/MAXMIN.rexx">MAXMIN.REXX</a></td>
+        <td>For when MAX() and MIN() are not quite good enough.</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/QUICKSRT.rexx">QUICKSRT.REXX</a></td>
+        <td>An example Quicksort routine for you to read AND
+        IMPROVE UPON!</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/REDISP.rexx">REDISP.REXX</a></td>
+        <td>For the retentive, a simple ISPF macro to move DISP=SHR
+        before the DSN= in JCL. Then the dataset names will be
+        all alligned. Lovely.</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/TBSHOW.rexx">TBSHOW.REXX</a></td>
+        <td>Investigate the structure and contents of an ISPF
+        table. The table name is hardcoded in the exec, cos I
+        only use it occasionally.</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx\TBDEMO.rexx">TBDEMO.REXX</a><p><a
+        href="Rexx/TBDEMO.dtl">TBDEMO.DTL</a></p>
+        </td>
+        <td>Unfinished example dialog showing the basics for
+        handling ISPF tables using TBDISP</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/CPUTEST.rexx">CPUTEST.REXX</a></td>
+        <td>Example of stems vs. string functions using simple
+        CPU usage monitoring code SYSVAR('SYSCPU')</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/RXGDGV.rexx">RXGDGV.REXX</a></td>
+        <td>Returns information on Generation Data Groups. Its
+        coding is terse and possibly a little difficult to read
+        as it is intended for use as an external function. </td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/TRANSTR.rexx">TRANSTR.REXX</a></td>
+        <td>Translate strings withing a sting into other strings.
+        An equivalent of TRANSLATE() for string translation.</td>
+    </tr>
+    <tr>
+        <td><a href="Rexx/DSBROWSE.rexx">DSBROWSE.REXX</a></td>
+        <td>A sample Rexx CGI exec to browse datasets via a web
+        browser. Its really old, probably superceeded by features
+        in web servers, and may not work anymore.</td>
+    </tr>
+	    <tr>
+        <td><a href="Rexx/DYNAREA.rexx">TBDEMO.REXX</a><p><a
+        href="Rexx/DYNAREA.dtl">TBDEMO.DTL</a></p>
+        </td>
+        <td>Very simple demo of a dynamic area</td>
+    </tr>
+</table>
+</div>
+
+<p align="center"><img src="../Pics/fishes1.gif" border=0></p>
+<p>Does the world need another <a
+href="Applets/TicTacToe/TicTacToe.html">Tic Tac Toe</a> applet. I
+happen to think it does.</p>
+
+<p>Based on the TicTacToe applet, Im constructing a <a
+href="Applets/Reversi/Reversi.html">Reversi</a> applet. Dont
+expect much from it yet.</p>
+
+<p align="center"><img src="../Pics/fishes1.gif" border=0></p>
+<a name="imagemanipulation"></a>
+<h3> Digital Camera Picture Management Using Rexx and ImageMagick</h3>
+
+ <p>
+ These Execs are a bit rough and ready, and have my home PC directories and other bits hardcoded within.
+  But I have an Icon on my desktop that I click on, and it runs picunload.rexx
+  to do all the renaming, data extraction and index web page in one hit.
+   I also use them to create the pages found in <a href="../The_Pit/index.html">the pit.</a>
+   </p>
+
+<table border="1" width="100%">
+
+      <td><a href="Rexx/picgetinfo.rexx">picgetinfo.rexx</a></td>
+      <td>Extract the picture information from the Nikon info.txt file.</td>
+   </tr>
+   <tr>
+      <td><a href="Rexx/picmktext.rexx">picmktext.rexx</a></td>
+      <td>Create/update a .txt file to act as metedata for the jpeg file. I could use an
+             XML file or SQL interface instead, but this format is simple. </td>
+   </tr>
+   <tr>
+      <td><a href="Rexx/picgettext.rexx">picgettext.rexx</a></td>
+      <td>Given a jpeg filename, Find the text file and read selected fields from it. </td>
+   </tr>
+   <tr>
+      <td><a href="Rexx/picunload.rexx">picunload.rexx</a></td>
+      <td>Copy everything off of the cardreader, and run the prepareation and index generator execs, then launch konquerer. The source and destination pathnames are all hardcoded at the moment.</td>
+   </tr>
+    <tr>
+      <td><a href="Rexx/picprepare.rexx">picprepare.rexx</a></td>
+      <td>Rename jpeg files to include data/time, and create the text metadata files.</td>
+   </tr>
+   <tr>
+      <td><a href="Rexx/picmkwebpage.rexx">picmkwebpage.rexx</a></td>
+      <td>Create/refresh thumbnails as needed, then create an index webpage using data from the text meteadata files.</td>
+   </tr>
+    <tr>
+      <td><a href="Rexx/picmkthumb.rexx">picmkthumb.rexx</a></td>
+      <td> Create a thumbnail for this jpeg.</td>
+   </tr>
+   <tr>
+      <td><a href="Rexx/picconvert.rexx">picconvert.rexx</a></td>
+      <td> Generic shell around Imagemagick, leaving a copy of the original in /tmp/piccopy.
+              You can set this up from within KDE to quickly resize/rotate images for emailing.
+               I generally use The Gimp for that, though.</td>
+   </tr>
+   <tr>
+      <td>getconfig.rexx</td>
+      <td>  What I might create one day if I feel like its worth it.</td>
+   </tr>
+</table>
+<p align="center"><img src="../Pics/fish3.gif"></p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3"
+   name=""
+   committed-date="2005-11-05T20:02:45.155036Z"
+   url="http://localhost/svn/home/WebPages/Computers"
+   last-author="neil"
+   kind="dir"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="rexxfaq.html"
+   text-time="2005-06-30T22:49:59.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="958a030bf5f14a029d26464e6fb4b788"
+   last-author="neil"
+   kind="file"/>
+<entry
+   name="Rexx"
+   kind="dir"/>
+<entry
+   name="Javascript"
+   kind="dir"/>
+<entry
+   name="Applets"
+   kind="dir"/>
+<entry
+   committed-rev="3"
+   name="RexxStyleGuide.html"
+   text-time="2005-06-30T22:49:58.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="d3fca1b8e1d7a1ba37ddee658dce8b1c"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="RexxStyleHilite.html"
+   text-time="2005-06-30T22:49:58.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="c6ef04a423dcbe0bd68bd9d79c8246bf"
+   last-author="neil"
+   kind="file"/>
+<entry
+   committed-rev="3"
+   name="index.html"
+   text-time="2005-06-30T22:49:58.000000Z"
+   committed-date="2005-11-05T20:02:45.155036Z"
+   checksum="adc451defa061b611725de5ccb2002d6"
+   last-author="neil"
+   kind="file"/>
+</wc-entries>
