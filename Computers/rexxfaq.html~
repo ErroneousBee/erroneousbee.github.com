@@ -12,10 +12,10 @@
 <table border="0" width="100%">
   <tbody>
     <tr>
-      <td><a href="index.html"><img src="../images/o_up.gif" border="0"
+      <td><a href="index.html"><img src="../Pics/o_up.gif" border="0"
  width="30" height="30">Up to the computing page. </a><br>
       <a href="mailto:webspace@neilhancock.co.uk"><img
- src="../images/o_mailto.gif" border="0" width="30" height="30">Send
+ src="../Pics/o_mailto.gif" border="0" width="30" height="30">Send
 Feedback.</a></td>
       <td>
       <p align="right">Last-modified: 01 Aug 2004<br>
@@ -173,7 +173,7 @@ information sources</li>
 </ul>
 <hr>
 <h2 align="center"><a name="C1Coding">Using Rexx. </a></h2>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C1Running"><strong>How do I Run My Rexx Exec.</strong></a> </p>
 <p>Most of this is described in the User Guide, or in the guide for the
 appropriate
@@ -212,7 +212,7 @@ DD</li>
 <p>For more information, <a
  href="http://www.s390.ibm.com/os390/bkserv/">RTFM</a>.
 </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C1Alloc"><strong>How do I allocate Exec libraries and other
 datasets
 to my TSO or ISPF session.</strong></a></p>
@@ -235,7 +235,7 @@ to replicate your current allocations, type the CLIST command on
 the command line. Edit and save the Clist created, and run it at
 logon (outside of ISPF) to allocate your own environment.</li>
 </ul>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C1Docs"><strong>Where can I find Rexx manuals and documentation.</strong></a></p>
 <a href="http://www.ibm.com/servers/eserver/zseries/zos/bkserv/">IBM
 Online Library</a> in
@@ -248,13 +248,13 @@ section. <br>
 There is a manual for Rexx in the Unix System Services environment.<br>
 Interfaces for other applications will be documented with that
 application.</p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC5"><strong>How do I find or access the current level of a
 GDG.
 </strong></a></p>
 <p>Use Outtrap() on the output of TSO LISTCAT. </p>
 <p>See RXGDGV() in the appendices.</p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC6"><strong>How do I access data in control blocks such as
 jobname?
 </strong></a></p>
@@ -268,7 +268,7 @@ say strip(storage(d2x(c2d(tiot)),8)) /* TIOCNJOB */ <br>
 /* I have lost the original author of this code.<br>
 Thanks whoever you are - NWH */ <br>
 </code></p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC7"><strong>How can I access a calling execs variables.</strong></a></p>
 <p>Rexx doesn't allow an exec to access the symbols used by another
 exec.
@@ -288,7 +288,7 @@ on it to make the variables available in the external program. </li>
 the manual. <br>
   </li>
 </ul>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC9"><strong>How do I implement job control with (and for)
 Rexx
 </strong></a></p>
@@ -362,7 +362,7 @@ the
 REXX technology that CA-JOBTRAC currently uses and possibly a time
 frame on
 the availability </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC11"><strong>Where are the Standard Rexx I/O functions</strong></a></p>
 <p>Linein(), Lineout(), Stream() etc. have not been implemented in
 MVS/Rexx
@@ -373,7 +373,7 @@ available
 from IBM's <a
  href="http://www14.software.ibm.com/webapp/download/downloadaz.jsp">Download
 website</a>. </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC12"><strong>How do I replicate CLIST's WRITENR
 functionality?
 </strong></a></p>
@@ -390,7 +390,7 @@ MVS/Rexx.</p>
  href="ftp://ftp.mackinney.com/freebies/">ftp.mackinney.com </a>and
 the <a href="http://members.aol.com/cbttape">CBT tape </a><br>
 </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C1Outtrap"><strong>Why does Outtrap() not trap all output </strong></a></p>
 <p>The Outtrap() function does not trap output written directly to the
 screen
@@ -404,7 +404,7 @@ is normally
 written to the screen. Session Manager may require some setting up by
 your
 Systems Programer, who will have to look things up in the TSO manuals.</p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C1EXECIO"><strong>EXECIO, why does it require 'Enter' more than
 once
 </strong></a></p>
@@ -429,7 +429,7 @@ output.</li>
   <li>See also <a href="#RTFToC23">EXECIO</a> under Style.<br>
   </li>
 </ul>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C1LisDS"><strong>How do I List Datasets and PDS members. </strong></a></p>
 <p>There are various methods for listing datasets and PDS members.</p>
 <ul>
@@ -450,7 +450,7 @@ a tool for reporting upon datasets (FDREPORT) that can be customised
 for use with Rexx under TSO. <br>
   </li>
 </ul>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C1spool"><strong>How do I access data held on the JES spool.</strong></a></p>
 <p>JES3 sites can extract data off of the JES3 spool using E-JES.</p>
 <p>The TSO STATUS command gives limited information about jobs on the
@@ -462,7 +462,7 @@ CANCEL command can be used to stop jobs, and TSO SUBMIT to them. </p>
  href="http://www.cbttape.org">CBTTape</a> for examples.</p>
 <p>JES2 users can brave the perils of SDSF in batch or other third
 party products</p>
-<p><a name="C1OddRcs"><strong><img src="../images/fish4.gif" width="45"
+<p><a name="C1OddRcs"><strong><img src="../Pics/fish4.gif" width="45"
  height="20">What do unusual return codes such as -3 and 0196 mean?</strong></a></p>
 <p>Basically they are either decimalised abend codes or indicate a
 problem
@@ -470,13 +470,13 @@ with the environment.</p>
 <p>E.g. 0196 is decimal for hex 0C4, -3 indicates external environment
 not
 found. This is explained further in the Rexx manuals.</p>
-<p><a name="C1MacroParms"><strong><img src="../images/fish4.gif"
+<p><a name="C1MacroParms"><strong><img src="../Pics/fish4.gif"
  width="45" height="20">How do I pass parms to my ISPF Edit macro.</strong></a></p>
 <p>From command line calls use ISPEXEC "MACRO (parms)"</p>
 <p>From ISPEXEC EDIT call use VPUT and VGET<br>
 </p>
 <p><a name="C1Parse_ARG"><strong><img
- src="file:///data/Webpages/images/fish4.gif" width="45" height="20">Why
+ src="file:///data/Webpages/Pics/fish4.gif" width="45" height="20">Why
 are my procedure arguments in upper case.<br>
 </strong></a></p>
 <strong style="font-weight: normal;">It may be because you are&nbsp;
@@ -491,7 +491,7 @@ are ISPF edit and ISPF 6.<br>
 <br>
 <hr>
 <h2 align="center"><a name="C2Environs">Rexx and Different environments.</a></h2>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C2OEServ"><strong>OS/390 Unix System Services </strong></a></p>
 <p>address SYSCALL and address SH give you the ability to run execs
 that use
@@ -520,7 +520,7 @@ symbol, but through new symbols retval and errno. </li>
   <li>The syscall environment initialises __argv. and __environment.
 stems. </li>
 </ul>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC17"><strong>ISPF Services</strong></a></p>
 <p><code>address ISPEXEC</code> is detailed in the REXX and ISPF
 manuals.
@@ -543,7 +543,7 @@ fail.
 To avoid the problem, open a fake table, e.g. ADDRESS ISPEXEC "TBOPEN
 FAKETAB
 LIBRARY(FAKELIB) NOWRITE"<br>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="ISPFRc"><strong>ISPF Services in Batch </strong></a></p>
 <p>ISPF services can be used by a batch job, although panel display and
 user
@@ -571,7 +571,7 @@ in the job control. </p>
 <pre>/* REXX - Controlling ISPF errors example */<br>address ISPEXEC                                                    <br>                                                                   <br>/* If an ISPF error occurs, then return control to the Rexx */     <br>say 'Setting CONTROL ERRORS RETURN'                                <br>"CONTROL ERRORS RETURN"                                            <br>                                                                   <br>/* Call LMFREE for a nonexistent dataid. Returns rc = 10 ,         <br>   which is not usually terminated by ISPF anyway */               <br>say 'Calling LMFREE'                                               <br>"LMFREE DATAID(EEYORE)"                                            <br>say 'LMFREE rc='rc                                                 <br>                                                                   <br>/* Call LMOPEN with a bad parameter. Returns rc = 20 ,             <br>   which causes ISPF to cancel and is thus influenced by           <br>   the CONTROL ERRORS RETURN */                                    <br>say 'Calling LMINIT'                                               <br>"LMINIT DATAID(PIGLET) DATAFISH('HADDOCK')"                        <br>say 'LMINIT rc='rc                                              <br>                                                                   <br>/* Call EDIT with a non existent edit macro. I cannot get this to  <br>   return control to the Rexx, and it terminates here with the     <br>   'ISPP330 BDISPMAX exceeded' message. The JCL completion code    <br>   is an not very useful '00' */                                   <br>say 'Calling EDIT'                                                 <br>"EDIT DATASET('NWH.GENERAL.EXEC(ISPFTEST)') MACRO(MCGYVER)"        <br>say 'EDIT rc='rc                                                   <br>                                                                   <br>/* Pass the current value of rc back to job control */             <br>zispfrc = rc                                                       <br>address ISPEXEC "VPUT (ZISPFRC)"                                   <br>                                                                   <br>/* This EXIT return code will not make it back past ISPF, but it   <br>   would have if just TSO was involved. As ISPF is active, it      <br>   is overridden with the value of ZISPFRC, and a message appears  <br>   in the SYSTSPRT output */                                       <br>exit 12                                                            <br></pre>
 <p>See the <a href="#Appendix">Appendices</a> for an example JCL
 procedure.</p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC18"><strong>Load Modules (I.e. Assembled programs) </strong></a></p>
 <p>address MVS, LINKMVS, ATTCHMVS, etc. are detailed in REXX manuals.
 These
@@ -599,7 +599,7 @@ Some items to look out for are: </p>
 program.<br>
   </li>
 </ul>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC10"><strong>SQL</strong></a></p>
 <p>DB2 for zOS has a Rexx interface, introduced with DB2 version 5, and
 described
@@ -607,7 +607,7 @@ in the latest IBM DB2 manuals. The interface supplies the DSNREXX
 &nbsp;environment
 (as in ADDRESS DSNREXX "EXECSQL SELECT FROM yadda.yadda").&nbsp; <br>
 </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C2consl1"><strong>Console Command Environment </strong></a></p>
 <p>Kevin McGrath writes:<br>
 MVS TSO/REXX will issue MVS commands using TSO's MCS console support.
@@ -629,7 +629,7 @@ subsystems
 such as JES, RACF, etc. You may have to issue the command, and process
 unsolicited
 messages to retrieve information from subsystem commands. </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC19"><strong>Rexx aware editors</strong> </a></p>
 <p>ISPF edit supplies a color hilite facility that is a must if it is
 available.
@@ -640,7 +640,7 @@ Kate
 (part of KDE) uses a simple XML markup that allows highlighting of any
 language.
 </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC20"><strong>Rexx Compilers</strong></a></p>
 <p>There are Rexx compilers available, including one from IBM. Ask on
 the
@@ -648,7 +648,7 @@ newsgroup for Information on what is currently available. </p>
 <p>A freeware utility that converts Rexx source into a tokenised form
 (as
 is used by LLA / VLF) is rumoured to exist.</p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C2CGI"><strong>Using Rexx as CGI programs with the Web Server. </strong></a><br>
 Rexx can be used to create CGI programs that access MVS based resources
 for
@@ -689,7 +689,7 @@ should take precedence over anything said here. You may also prefer to
 work
 in your own style, and that too is perfectly acceptable.<br>
 </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC22"><strong>What are the most effective ways to use
 comments?
 </strong></a></p>
@@ -714,7 +714,7 @@ abbreviated
 past the point of becoming cryptic. <br>
   </li>
 </ul>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC23"><strong>EXECIO.</strong></a></p>
 <p>Close any brackets. It makes the code look neater.</p>
 <p>Use <code>address MVS "EXECIO"</code> in preference to <code>address
@@ -732,7 +732,7 @@ E.g. <font size="2" face="Courier New">"EXECIO" queued() "DISKW DDNAME
 </font></p>
 <p><font size="2" face="Courier New"><br>
 </font></p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC24"><strong>What case should I program in, upper or lower?
 </strong></a><strong><br>
 </strong>Readability can be improved by writing Rexx as if it were a
@@ -745,7 +745,7 @@ readability. It is common to write commands addressed to external
 environments
 in upper case, and to use mixed case for Rexx commands and symbols.<br>
 </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC25"><strong>Functions and procedures</strong></a></p>
 <p>If a call returns a value that is not a return code, it may be
 better to
@@ -756,7 +756,7 @@ then say 'Hello'</font> <br>
 versus:<font size="2" face="Courier New"> call Linein needle,haystack<br>
 if result = 1 then say 'Hello'</font></p>
 <p>Make the names of functions and procedures meaningful </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC26"><strong>Logical (Boolean) variables and functions.</strong></a><strong><br>
 </strong>Symbols with a value of 1 are logically true, 0 logically
 false.
@@ -768,7 +768,7 @@ logical values with those that return numeric values.</p>
 say
 'Hello' /* Is OK */<br>
 if Pos(needle,haystack) then say 'Hello' /* May abend */</font></p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC27"><strong>Symbolic names. </strong></a><strong><br>
 </strong>Symbolic (or variable) names are not limited to eight
 characters
@@ -801,7 +801,7 @@ Fflag = 'A'; if Fflag = 'A' then say 'hello' <br>
 <p>See also the section on <a href="#C3AlphaNum">using
 non-alphanumeric characters
 </a></p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC28"><strong>Internal and external calls </strong></a><strong><br>
 </strong>Rexx allows calls to be made to execs that reside outside of
 the
@@ -830,7 +830,7 @@ resulting I/O will drop the exec performance. </p>
 <p>The inability to share variables across external procedures may lead
 you
 to choose to use internal procedures over external ones . </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC29"><strong>How can I improve performance of my exec?</strong></a><strong><br>
 </strong>In general, using an appropriate and well tuned
 algorythm/solution
@@ -871,7 +871,7 @@ and
 no real improvement when interfacing to external environments.</p>
 <p>Performance test your code using the SYSVAR('SYSCPU') function and <strong>not</strong>
 the TIME() function. </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="RTFToC30"><strong>How can my systems programmer improve
 performance.
 </strong></a></p>
@@ -888,7 +888,7 @@ performed by
 user code. This may deter users from writing inefficient code to
 perform the
 task themselves. </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C3Tricks"><strong>What obscure coding tricks are there.<br>
 </strong></a></p>
 <p>These tricks are not necessarily recommended, as they can reduce the
@@ -966,7 +966,7 @@ say stem.2 /* ==&gt; 'mice' &nbsp; */ <br>
 say x &nbsp; &nbsp; &nbsp;/* ==&gt; '2' &nbsp; &nbsp; &nbsp;*/ <br>
 </code></font></small></p>
 <p><small><font face="Courier New, Courier, monospace"><strong></strong></font></small>&nbsp;</p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C3AlphaNum"><strong>Using Non-Alphanumeric characters. </strong></a></p>
 <p>Stephen Bacher writes on the subject of using non-alphanumeric
 characters:
@@ -983,7 +983,7 @@ include
 currency symbols, hash, at, double quotes, etc.) is because these
 characters
 may have different display meanings in foreign EBCDIC chacacter sets. </p>
-<p><strong><img src="../images/fish4.gif" width="45" height="20"></strong><a
+<p><strong><img src="../Pics/fish4.gif" width="45" height="20"></strong><a
  name="C3Other"><strong>Are there any other style hints? </strong></a></p>
 <ul>
   <li>Leave space at the end of line for continuations and short

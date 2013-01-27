@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Orbital Period Calculator</title>
+    <link rel="stylesheet" href="deltapavonis.css">
+    <script type="text/javascript"  src="deltapavonis.js"></script>
+</head>
+
+<body onLoad="onload();">
+
+<div>
+<p>A simple orbital period calculator.
+<form action="javascript:return false;" name="orbit">
+
+<br/>
+<span id="mass1" class="inputfield"></span><br/>
+<span id="mass2" class="inputfield"></span><br/>
+<span id="radius" class="inputfield" ></span><br/>
+<p>E.g. Earth orbital radius is 1AU or 93million miles (round the sun).</p>
+
+<br/>
+<button value="sub" name="sub" onclick="javascript:calcPeriod_submit(this.form);return false;">Show obital period</button>
+</form>
+
+<form action="javascript:return false;" name="orbit">
+
+<br/>
+
+<p>E.g. Earth orbital radius is 1AU or 93million miles (round the sun).</p>
+
+<br/>
+</form>
+
+<div id="bleh" class="results"></div>
+
+</body>
+</html>

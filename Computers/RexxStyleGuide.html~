@@ -17,10 +17,10 @@ content="Style Tips for Rexx in OS/390 environments.">
 style="page-break-before: always">
 <tr>
 	<td><p align="left"><a href="index.html"><img
-	src="../images/o_up.gif" border="0" width="30" height="30"
+	src="../Pics/o_up.gif" border="0" width="30" height="30"
 	name="Graphic1"></a><a href="index.html">Up to the computing page. </a><br>
 	<a href="mailto:webspace@neilhancock.co.uk">
-	<img src="../images/o_mailto.gif" border="0" width="30" height="30" name="Graphic2">
+	<img src="../Pics/o_mailto.gif" border="0" width="30" height="30" name="Graphic2">
 	</a>
 	<a href="mailto:webspace@neilhancock.co.uk">Send Feedback.</a>
 	</p>
@@ -32,7 +32,7 @@ style="page-break-before: always">
 </tr>
 </table>
 
-<h1 align="center"><img src="../images/fish3.gif" width="100"
+<h1 align="center"><img src="../Pics/fish3.gif" width="100"
 height="50" name="Graphic3"></h1>
 
 <h1 align="center">Style Guide for Rexx </h1>
@@ -58,7 +58,7 @@ can do when writing code. Most style problems can be repaired
 with a formatter, but useful comments cannot be conjured out of
 thin air.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic4">Comments come in two flavours, <strong>winged</strong>
 and <strong>boxed</strong>:</p>
 
@@ -79,14 +79,14 @@ href="#CalculateFactorial">Calculate_Factorial()</a> example.<br>
 Winged comments are useful for describing the purpose of the
 statement(s) immediatly adjacent to the comment.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic5">It may also be worth borrowing from the Javadoc
 idea. Comments enclosed by <strong>/** ... */ </strong>may be
 read by a suitable program, and the text within associated with
 the immediately following Rexx statement, and used to automate
 the creation of external documentation for the program.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic5">The use of asterisks (*) as the box border can
 make the comment too heavy. Consider using minus (-) or another
 lighter character instead. Also, don't worry about closing the
@@ -94,7 +94,7 @@ right hand vertical, as realigning the border after text
 insertion is a tedious affair. You may have a Rexx reformatter
 that deals with this problem.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic5">A common use of boxed comments is for an <strong>informative
 header</strong> at the start of the exec. Here is an example:</p>
 
@@ -134,7 +134,7 @@ header, particularly data that ages poorly. Dataset names and
 pointers to external information are particularly prone to
 becoming incorrect.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic6"> Things to avoid when creating comments:</p>
 
 <ul>
@@ -161,7 +161,7 @@ value'.<br>
 Compound variables, stems, and tails refer to the whole and
 various parts of compound variables. </p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic7">Always make your variable names useful and
 meaningful. </p>
 
@@ -173,14 +173,14 @@ read, and has other <a href="#Hungarian">dissadvantages</a>.</p>
 
 <p>Consider using i, j, k, etc as loop control variables. There
 are advantages and disadvantages to this:<br>
-<img src="../images/o_plus.gif" width="50" height="10"> Faster
+<img src="../Pics/o_plus.gif" width="50" height="10"> Faster
 execution speed. Single character variable names show a
 performance improvment (My simple test measured nearly 10%
 improvement).<br>
-<img src="../images/o_plus.gif" width="50" height="10"> Compound
+<img src="../Pics/o_plus.gif" width="50" height="10"> Compound
 variables names are shorter and less likely to make long
 statements cross onto multiple lines.<br>
-<img src="../images/o_minus.gif" width="50" height="10"> You have
+<img src="../Pics/o_minus.gif" width="50" height="10"> You have
 to rely on the stem name to indicate the meaning of the data in
 the compound variable. E.g. Consider compound var names <strong>record.i</strong>
 and <strong>score.teamIndex.eventIndex</strong> . It is obvious
@@ -188,7 +188,7 @@ that <strong>i</strong> is the record number, but would it be
 obvious from <strong>score.i.j</strong> that <strong>i</strong>
 is the team and <strong>j</strong> is the event?</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic7">Global variables can be handled in the following
 way:<br>
 First, in the opening section of your Exec, set a variable named
@@ -214,7 +214,7 @@ return 0</pre>
 </tr>
 </table>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic8">Do use the <strong>procedure</strong> keyword
 with every defined procedure. This hides the procedure's internal
 variables from the caller, and allows the use of<strong> i,j </strong>and
@@ -242,7 +242,7 @@ return factorial</pre>
 </tr>
 </table>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic9">This common problem occurs when a variable is
 assigned a value, and the variable is then used in a compound
 variable:</p>
@@ -285,7 +285,7 @@ Non-alphanumeric characters may not be portable to foreign EBCDIC
 character sets, and are not portable to some Rexx extentions,
 such as Object-Oriented Rexx.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic10">Large blocks of variable assignations can be
 split into columns, with variable names, variable values, and
 winged comments:</p>
@@ -310,7 +310,7 @@ statements up.</p>
 <p>But first, What are we trying to achieve, and how do we go
 about achieving our aim.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic11">We are trying to increase the readability of the
 code. </p>
 
@@ -327,7 +327,7 @@ years before you revisit it. A reasonable knowledge of Rexx may
 be assumed, even though the reader may be new to the language.
 Everyone has to learn something sometime.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic12">Here are some elements that go to make up
 statements:</p>
 
@@ -358,7 +358,7 @@ statements:</p>
 <li>Literal text.</li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic13">Here are some techniques to improve readability
 using case:</p>
 
@@ -371,7 +371,7 @@ using case:</p>
 </li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic14">Other techniques to improve readability are:.</p>
 
 <ul>
@@ -386,7 +386,7 @@ name="Graphic14">Other techniques to improve readability are:.</p>
 	structural items. </li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic11">We are also concerned with breaking up the code
 into manageable and reusable units. We can do this by using
 procedures, and by surrounding blocks of statements that perform
@@ -402,7 +402,7 @@ Rules</h1>
 <p>There are some facts about the programming environment that
 influence what techniques may be most effective.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">External function names are related to file
 names in a file system, or member names in partitioned datasets.
 MYFUNC() may refer to PDS 'user.EXEC(MYFUNC)' or file name MYFUNC.REXX,
@@ -411,7 +411,7 @@ external function names, you avoid having to quote function names
 to maintain lower case in the file name. You then, of course,
 must use upper case in the file names of external functions.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">Screen size influences how much code can be on
 the screen at one time. Using too many blank lines or splitting
 statements over multiple lines can move code out of the viewable
@@ -420,7 +420,7 @@ well on window based systems that allow the viewable area to be
 adjusted, but are restricted by the fixed terminal size of 3270
 systems. The same is true for boxed comments.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">Some editors are Rexx aware and can <a
 href="RexxStyleHilite.html">hilite Rexx code</a> to show keywords,
 quoted strings and other elements. A Rexx aware editor such as
@@ -429,12 +429,12 @@ keywords red, and all comments blue. There's no point in using
 upper case to highlight keywords, when the editor can pick them
 out with colour.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">Keywords appear in isolation in the text, and
 also tend to appear at the start of statements, so they stand out
 without any help from the programmer.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">Function and variable names tend to appear close
 together in code. We need to be able to differentiate variable
 names from function names, and also differentiate between the
@@ -450,16 +450,16 @@ datasetName = STRIP(TRANSLATE(Get_Dataset_Name(ddName)),,&quot;'&quot;)</pre>
 </tr>
 </table>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">Literals should be quoted, unless you can be
 sure that the literal hasn't been used as a symbol elsewhere.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">Commands being passed to external environments
 often have single quotes in them. E.g. <strong>address TSO &quot;ALLOC
 FI(TEST) DA('MY.DATASET') SHR REUSE&quot;. </strong></p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic15">NetRexx (and presumably other close relatives of
 Rexx) are sufficiently different from Rexx to make consideration
 of styles that apply to NetRexx irrelevant. Having said that
@@ -476,7 +476,7 @@ displays, and relies heavily on a highlighting editor to
 differentiate between keywords, quoted text, variable names, and
 other statement elements.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic16">Rules specifically related to case:</p>
 
 <ul>
@@ -508,7 +508,7 @@ name="Graphic16">Rules specifically related to case:</p>
 </li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic17">Rules for quoting:</p>
 
 <ul>
@@ -526,7 +526,7 @@ name="Graphic17">Rules for quoting:</p>
 </li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic18">Rules for procedures:</p>
 
 <ul>
@@ -544,7 +544,7 @@ name="Graphic18">Rules for procedures:</p>
 	example. </li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic19">Rules for comments:</p>
 
 <ul>
@@ -565,7 +565,7 @@ name="Graphic19">Rules for comments:</p>
 	the <a href="#ProcComment">LZ78 demo </a>for an example. </li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic20">Other miscellaneous rules:</p>
 
 <ul>
@@ -576,7 +576,7 @@ name="Graphic20">Other miscellaneous rules:</p>
 	other similar structures with between 1 and 3 spaces. </li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic21"><strong>An aside on following a ruleset:</strong>
 One important comment that must be made, is that it is not so
 important that one set of rules is followed in all cases, but <em>it
@@ -588,7 +588,7 @@ can hinder a readers understanding of the program.</p>
 
 <h1 align="center">Style Example</h1>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic22">Here's an example program, with two similar
 internal functions present, in two slightly different styles. The
 compress function follows the above example set of guidelines.
@@ -749,7 +749,7 @@ outString = LEFT(outString,LENGTH(outString)-1)</pre>
 programs if they're going to be ignored. You have to make people
 want to follow your guidelines.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic23">Here are some ways of encouraging the use of
 programming standards:</p>
 
@@ -800,7 +800,7 @@ say Status_Char(userStatus,'TEXT')':' userName 'is' userStatus</pre>
 <p>There are some good reasons to use concatenation operators,
 and some good reasons not to. </p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic11">Points for the use of the concatenation operator:</p>
 
 <ul>
@@ -812,7 +812,7 @@ name="Graphic11">Points for the use of the concatenation operator:</p>
 	concatenation operators.</li>
 </ul>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic11">Points for ommiting the operator whenever
 convenient:</p>
 
@@ -831,7 +831,7 @@ convenient:</p>
 
 <h1 align="center">Some Other Dos and Don'ts</h1>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic23">Don't use too many levels of indirection.<br>
 For instance, there is often little use in storing ISPF panel
 names in variables when address ISPEXEC &quot;DISPLAY PANEL(MYPANEL)&quot;
@@ -841,7 +841,7 @@ functions can equally make debugging an exec very tiresome indeed,
 so make sure that you comment what is going on if you do have to
 create a complicated structure.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic23">Do make sure abstracted procedures allow full
 access to the underlying data.<br>
 For instance, say you put a nice shell exec around TSO LISTCAT.
@@ -853,7 +853,7 @@ to old code creates backwards compatibility problems, and
 maintenance problems as the code becomes 'hairy' from unnecessary
 revisions.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic23">Don't hide information in variables set far away
 from where they are used.<br>
 Its one thing to have a nice block of commented assignations near
@@ -861,7 +861,7 @@ the top of an exec or procedure, but its another thing entirely
 to place assignation statements in obscure parts of the exec, far
 away from where they will actually be used.</p>
 
-<p><img src="../images/fish4.gif" width="45" height="20"
+<p><img src="../Pics/fish4.gif" width="45" height="20"
 name="Graphic23">Do end all internal procedures with an
 unconditional RETURN.<br>
 This makes it clear to the reader when a procedure ends and may
@@ -871,7 +871,7 @@ help code formatting tools to spot the end of internal procedures.</p>
 
 <h1 align="center">Send Feedback</h1>
 
-<p align="left"><img src="../images/fish4.gif" width="45"
+<p align="left"><img src="../Pics/fish4.gif" width="45"
 height="20" name="Graphic23">Please <a href="mailto:webspace@neilhancock.co.uk">drop me a line</a>, and tell
 me about any improvements you think could be made to this page.</p>
 

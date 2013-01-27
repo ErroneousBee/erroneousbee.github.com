@@ -1,0 +1,17 @@
+body{
+background-color: lightblue;  
+}
+
+.inputfield{
+color: blue;
+}
+
+select{
+background-color: lightgreen;
+color: darkblue;
+}
+  
+.results { 
+font-weight: bold;
+color: red;
+}

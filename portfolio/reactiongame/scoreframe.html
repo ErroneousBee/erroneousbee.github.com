@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Reactionary Blobs</title>
+</head>
+<body  onload="parent.onLoad()">
+<center>
+<p id="messagearea">Hello</p>
+<p id="timerarea">Timer: 00:00:00.000</p>
+<div id="hiscoretable">
+<table
+ style="margin-left: auto; margin-right: auto; width: 200px; text-align: center;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td colspan="2" rowspan="1"
+ style="text-align: center; vertical-align: top;">High Scores<br>
+      </td>
+    </tr>
+    <tr id="hiscore00" style="visibility: hidden;">
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr id="hiscore01" style="visibility: hidden;">
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr id="hiscore02" style="visibility: hidden;">
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr id="hiscore03" style="visibility: hidden;">
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr id="hiscore04" style="visibility: hidden;">
+      <td>x</td>
+      <td>x</td>
+    </tr>
+  </tbody>
+</table>
+<form> <input onclick="parent.resetHiScores()" value="Reset" type="button"></form>
+</div>
+
+<div>
+<p> Press go, after a short pause, a third blob will appear between the two there already, you must click on its twin as swiftly as possible.</p>
+<form> <input onclick="parent.runStuff()" value="Go!" type="button"></form>
+</div>
+</body>
+</html>
