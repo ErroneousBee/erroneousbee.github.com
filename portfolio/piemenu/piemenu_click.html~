@@ -2,13 +2,29 @@
   <head>
     <title></title>
     <meta content="">
+    <script language="JavaScript" type="text/javascript" src="tools_piemenu_click.js"></script>
     <script language="JavaScript" type="text/javascript" src="piemenu.js"></script>
-    <link rel="stylesheet" href="piemenu.css">
 
+    <style type="text/css">
+    	div.piemenu {
+    		position: absolute;
+    	}
+	#pietooltip 	{ 
+	font-size: small;
+	width:100px;
+	height:15px;
+	background-color:#99ccff;
+	text-align:center;
+	visibility:hidden
+	}
+	#pietarget1{
+	position:absolute;left:600px;top:300px
+	}
+    </style>
   </head>
-  <body onload="pm_init_pie_menu_icons();">
+  <body onload="loadImages();">
 
-   <div id="piemenu" class="piemenu"><span id="pietooltip"></span><span id="pieicons"></span></div>
+   <div id="piemenu"><p id="pietooltip" width="100" height="15"></p></div>
 
    <!-- Actuall visible contents -->
    <div>
@@ -18,14 +34,14 @@
    </div>
 
    <div id="pietarget1">
-   	<img src="../images/dotblack.gif" onclick="pm_activate_pie(event);return false">
+   	<img src="../images/dotblack.gif" onclick="activatePie(event);return false">
    </div>
 
    <p>Non clickable text</p>
-   <div id="pietarget2"><img src="../images/dotblack.gif" onclick="pm_activate_pie(event);return false"></div>
+   <div id="pietarget2"><img src="../images/dotblack.gif" onclick="activatePie(event);return false"></div>
    
-   <div id="pietarget3"><p onclick="pm_activate_pie(event);return false"> Click on this quite long peice of text</p></div>
-   <div id="pietarget3a"><p onclick="pm_activate_pie(event);return false"> or click on this quite long peice of text</p></div>
+   <div id="pietarget3"><p onclick="activatePie(event);return false"> Click on this quite long peice of text</p></div>
+   <div id="pietarget3a"><p onclick="activatePie(event);return false"> or click on this quite long peice of text</p></div>
    
    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse gravida nibh et sem. Nam odio. Phasellus felis. Donec tempus, purus et euismod vulputate, eros quam feugiat nibh, id fermentum tellus purus eu libero. In sit amet enim. Donec luctus pede. Etiam dignissim ante id pede luctus blandit. Maecenas pede nisl, hendrerit at, vulputate id, fringilla non, nisl. Sed blandit massa ut sem. Maecenas tempor ipsum et mi. Duis semper dui in magna. Curabitur nec wisi ut lacus porttitor mollis. Integer venenatis leo et ante. Fusce quis libero. Duis volutpat posuere nisl. Donec tincidunt tincidunt lorem. Quisque pellentesque, nunc et volutpat ullamcorper, quam risus iaculis est, vel aliquam erat magna sed pede. Aenean interdum neque quis risus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 
@@ -37,6 +53,6 @@
 
    <p>Quisque nibh turpis, lobortis sed, fermentum sit amet, rhoncus sed, leo. Aenean laoreet, nulla ut sodales iaculis, tellus libero vehicula velit, luctus viverra augue purus a leo. Vivamus egestas tortor sed nibh. Fusce a massa. Aliquam erat volutpat. Curabitur sodales sollicitudin turpis. Morbi dui. Aliquam erat volutpat. Nunc pulvinar. Pellentesque viverra, nibh non faucibus placerat, ipsum enim nonummy lectus, sit amet auctor neque nibh id arcu. In non purus id metus malesuada laoreet. Nulla facilisi. Aenean et enim. Integer a nulla sit amet augue hendrerit malesuada. Maecenas vehicula, nibh et aliquet hendrerit, ipsum sapien commodo libero, ornare adipiscing orci turpis sed erat.</p>
    
-   <div id="pietarget4"><img src="../Images/dotblack.gif" onclick="pm_activate_pie(event);return false"></div>
+   <div id="pietarget4"><img src="../Images/dotblack.gif" onclick="activatePie(event);return false"></div>
   </body>
 </html>

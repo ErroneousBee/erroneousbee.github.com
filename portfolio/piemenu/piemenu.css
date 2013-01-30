@@ -1,0 +1,25 @@
+div.piemenu {
+ position: absolute;
+ visibility:hidden;
+}
+
+#pietooltip { 
+ font-size: small;
+ width:100px;
+ height:15px;
+ background-color:#99ccff;
+ text-align:center;
+ visibility:hidden;
+ position:absolute;
+}
+
+#pieicons { 
+ visibility:hidden;
+}
+
+/* An absolute positioned mouse target */
+#pietarget1 {
+ position:absolute;
+ left:600px;
+ top:300px
+}

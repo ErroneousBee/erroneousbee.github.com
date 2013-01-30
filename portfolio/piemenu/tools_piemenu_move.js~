@@ -14,7 +14,7 @@ var preventSelect = false;
 
 // Functions
 // --------------------------------------------------------
-function pieMouseDown(e) {
+function pieMouseDown (e) {
 	
 	// Normalise the event amd target element for IE or W3C DOM
 	// Then chain up parents to node/element that is the container
@@ -104,12 +104,12 @@ function pieMouseDown(e) {
 	// Is there space above
 
 	if (document.addEventListener) {
-		document.addEventListener("mouseup",pm_select_action,true);
-		document.addEventListener("mousemove",pm_mouse_move,false);
+		document.addEventListener("mouseup",pieSelect,true);
+		document.addEventListener("mousemove",pieMouseMove,false);
 	}
 	else if (document.attachEvent) {
-		document.attachEvent("onmouseup",pm_select_action);
-		document.attachEvent("onmousemove",pm_mouse_move);
+		document.attachEvent("onmouseup",pieSelect);
+		document.attachEvent("onmousemove",pieMouseMove);
 		// preventSelect = true;
 	}
 	
@@ -124,7 +124,7 @@ function pieMouseDown(e) {
 }
 
 // --------------------------------------------------------
-function pm_mouse_move (e) {
+function pieMouseMove (e) {
 	
 	e = (e) ? e : ((window.event) ? event : null);
 	if (!(e)) {return;}
@@ -179,7 +179,7 @@ function pm_mouse_move (e) {
 }
 
 // --------------------------------------------------------
-function pm_select_action (e) {
+function pieSelect (e) {
 	
 	e = (e) ? e : ((window.event) ? event : null);
 	if (!(e)) {return;}
@@ -213,12 +213,12 @@ function pm_select_action (e) {
 	else {e.cancelbubble = true;}
 		
 	if (document.removeEventListener) {
-		document.removeEventListener("mouseup",pm_select_action,true);
-		document.removeEventListener("mousemove",pm_mouse_move,false);
+		document.removeEventListener("mouseup",pieSelect,true);
+		document.removeEventListener("mousemove",pieMouseMove,false);
 	}
 	else if (document.detachEvent) {
-		document.detachEvent("onmouseup",pm_select_action);
-		document.detachEvent("onmousemove",pm_mouse_move);
+		document.detachEvent("onmouseup",pieSelect);
+		document.detachEvent("onmousemove",pieMouseMove);
 		preventSelect = false;
 	}
 	
