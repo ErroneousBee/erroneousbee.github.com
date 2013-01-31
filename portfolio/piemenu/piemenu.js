@@ -3,8 +3,8 @@
 var pm = {
  clickedelement:null,
  pieorigin:[0,0],
- iconcount:5,
- iconradius:60, // radius of the icon circle in px
+ iconcount:6,
+ iconradius:30, // radius of the icon circle in px
  iconrange:[],
  iconimg:[],
  oldimg:null,
@@ -105,36 +105,41 @@ function pm_activate_pie(e) {
 	}
 				
 	// Note the middle of the pie at mouse, may be offset if element was against an edge.
-    pm.pieorigin = [mouseX,mouseY];
-	//pm.pieorigin = [Math.min(pm.pieorigin[0],document.body.scrollLeft+pm.iconradius+10),Math.min(pm.pieorigin[1],document.body.scrollTop+pm.iconradius+10)];
-	//pm.pieorigin = [Math.max(pm.pieorigin[0], pm.iconradius-20),Math.max(pm.pieorigin[1], pm.iconradius-20)];
+	// Adjust XY away from left/top screen edges
+	pm.pieorigin = [Math.max(mouseX,pm.iconradius+10),Math.max(mouseY,pm.iconradius+10)];
+        // Adjust XY away from right/bottom scroll edges
+        //pm.pieorigin[0] = Math.min(pm.pieorigin[0],document.body.scrollLeft-pm.iconradius-10)
+        //pm.pieorigin[1] = Math.min(pm.pieorigin[1],document.body.scrollTop-pm.iconradius-10)
+        
 
 	// Build the pie contents
 	var theta = (2*Math.PI)/pm.iconcount; // Angle between icons in radians
 	var angle = 0;
 	var newHTML = '';
 	pm.iconrange = [];
-	for (i=0;i<pm.iconcount;i++) {   
+	for (i=0;i<pm.iconcount;i++) {
+            iconX = (pm.iconradius * Math.sin(angle));
+            iconY = -(pm.iconradius * Math.cos(angle));
+            iconX += pm.pieorigin[0] - (pm.iconimg[i].width/2);
+            iconY += pm.pieorigin[1] - (pm.iconimg[i].height/2);
+            newHTML += '<img src="'+ pm.iconimg[i].src +'" class="pieicon" id="pieicon'+ i +'" ';
+            newHTML += 'align="middle" height="'+ pm.iconimg[i].height +'" width="'+ pm.iconimg[i].width +'" ';
+            newHTML += 'style="position:absolute;left:'+ iconX +'px;top:'+ iconY +'px">';
 		
-		iconX = (pm.iconradius * Math.sin(angle)) - pm.iconimg[i].width/2;
-		iconY = -(pm.iconradius * Math.cos(angle)) - pm.iconimg[i].height/2;
-		iconX = parseInt(iconX + pm.pieorigin[0]);
-		iconY = parseInt(iconY + pm.pieorigin[1]);
-		newHTML += '<img src="'+ pm.iconimg[i].src +'" class="pieicon" id="pieicon'+ i +'" ';
-		newHTML += 'align="middle" height="'+ pm.iconimg[i].height +'" width="'+ pm.iconimg[i].width +'" ';
-		newHTML += 'style="position:absolute;left:'+ iconX +'px;top:'+ iconY +'px">';
-		
-		// Set angle ranges where this icon is selected
-		pm.iconrange[i] = [angle-(theta/2),angle,angle,angle+(theta/2)];
-		if (pm.iconrange[i][0] < -Math.PI) {
-			pm.iconrange[i][0] += 2*Math.PI;
-			pm.iconrange[i][1] += 2*Math.PI;
-		}
-		angle += theta;
-		if (angle >= Math.PI) {angle = angle-(2*Math.PI);}
-	}
+            // Set angle ranges where this icon is selected
+            pm.iconrange[i] = [angle-(theta/2),angle,angle,angle+(theta/2)];
+            if (pm.iconrange[i][0] < -Math.PI) {
+                pm.iconrange[i][0] += 2*Math.PI;
+                pm.iconrange[i][1] += 2*Math.PI;
+            }
+            angle += theta;
+            if (angle >= Math.PI) {angle = angle-(2*Math.PI);}
+	}                                                                               
 	
 	// Position the div at event mouse position and activate the menu
+	var menudiv = document.getElementById('piemenu');
+        menudiv.innerHTML = '<span id="pietooltip"></span><span id="pieicons"></span>';
+        
 	var menudiv = document.getElementById('pieicons');
 	menudiv.innerHTML = newHTML;
 	menudiv.style.zIndex = 2;
@@ -165,11 +170,11 @@ function pm_activate_pie(e) {
 		document.addEventListener("mousemove",pm_mouse_move,false);
 	}
 	else {
-		pm.oldonclick 		= document.onclick;
-		pm.oldmousemove		= document.onmousemove;
-		document.onclick 	= pm_select_action;
-		document.onmousemove 	= pm_mouse_move;
-		preventSelect 		= true;
+		pm.oldonclick = document.onclick;
+		pm.oldmousemove	= document.onmousemove;
+		document.onclick = pm_select_action;
+		document.onmousemove = pm_mouse_move;
+		pm.preventSelect = true;
 	}
 	
 	//Prevent propogation and return
@@ -179,12 +184,16 @@ function pm_activate_pie(e) {
 	else {e.cancelbubble = true;}
 	
 	pm.pieActive = true;
+        
 	return false;
 
 }
 
 // --------------------------------------------------------
-// Mouse has moved, a pie is active, to drive any screen updates
+/**
+ * Function:  pm_mouse_move
+ * Mouse has moved, a pie is active, to drive any screen updates.
+ */
 function pm_mouse_move(e) {
 	
 	var posX, posY;
@@ -238,18 +247,24 @@ function pm_mouse_move(e) {
 		activesector = sector;
 	}
 	
-	preventSelect = false;	
+	pm.preventSelect = false;	
 	return false;
 }
 
 // --------------------------------------------------------
+/**
+ * Function: pm_select_action
+ * event handler for the pie menu select. 
+ * 
+ * Simply issues an alert to say what was selected
+ */
 function pm_select_action(e) {
 	
 	e = (e) ? e : ((window.event) ? event : null);
 	if (!(e)) {return;}
 
 	// Suppress the IE follow through.
-	if (preventSelect) {
+	if (pm.preventSelect) {
 		preventSelect = false;
 		e.cancelbubble = true;
 		e.returnValue = false;
@@ -262,11 +277,13 @@ function pm_select_action(e) {
 
 	// Close the menu
 	menudiv.style.visibility = 'hidden';
-	pm.oldimg = null;
+        menudiv.innerHTML = '';
+        pm.oldimg = null;
+        
 	activesector = null;
 
 	// Execute the action
-	if (selectedsector != null) { alert('Sector ' + selectedsector + ' activated.');}
+	if (selectedsector != null) { alert(pm.iconimg[selectedsector].tooltip + ' activated.');}
 	else { alert('cancelled menu');}
 
 	if (document.removeEventListener) {
@@ -274,9 +291,9 @@ function pm_select_action(e) {
 		document.removeEventListener("mousemove",pm_mouse_move,false);
 	}
 	else {
-		document.onclick 	= oldonclick;
-		document.onmousemove 	= oldmousemove;
-		preventSelect 		= false;
+		document.onclick = oldonclick;
+		document.onmousemove = oldmousemove;
+		pm.preventSelect = false;
 	}
 
 	//Prevent propogation
@@ -289,8 +306,4 @@ function pm_select_action(e) {
 	return false;
 }
 
-
-// --------------------------------------------------------
-function pieSetup(iconcount) {
-}
 

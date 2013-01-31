@@ -17,9 +17,55 @@ div.piemenu {
  visibility:hidden;
 }
 
+img.pieicon { 
+ margin:0px;
+ padding:0px;
+ border:0px;
+}
+
 /* An absolute positioned mouse target */
-#pietarget1 {
+#pietarget_abs {
  position:absolute;
  left:600px;
  top:300px
+}
+
+div.floatleft img {
+    float:left;
+}
+
+div.floatright img {
+    float:right;
+}
+
+div.clear {
+    clear:both;
+}
+
+div.pietarget {
+    cursor: pointer;
+}
+
+div.pietarget span {
+    background: lightgrey;
+}
+
+body {
+    margin:0px;
+    padding:0px;
+    border:0px;
+    text-align: center;
+}
+
+div.content {
+    padding: 5px;
+    text-align: left;
+}
+
+div.preamble {
+    background: #ccccff;
+    width: 50%;
+    min-width: 350px;
+    margin: 0 auto;
+    text-align: left;
 }
