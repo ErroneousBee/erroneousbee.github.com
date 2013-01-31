@@ -26,8 +26,8 @@ img.pieicon {
 /* An absolute positioned mouse target */
 #pietarget_abs {
  position:absolute;
- left:600px;
- top:300px
+ left:400px;
+ top:600px
 }
 
 div.floatleft img {
@@ -40,10 +40,13 @@ div.floatright img {
 
 div.clear {
     clear:both;
+    margin:3px;
 }
 
 div.pietarget {
     cursor: pointer;
+    text-align: center;
+    
 }
 
 div.pietarget span {
@@ -68,4 +71,7 @@ div.preamble {
     min-width: 350px;
     margin: 0 auto;
     text-align: left;
+    padding: 6px;
+    border-radius: 10px;
+    border: 3px solid black;
 }
