@@ -13,7 +13,6 @@ var pm = {
  oldonmousemove:null,
  preventSelect:false,
  pieActive:false, // For MS event model
- type:'click'
 };
 
 /** 
@@ -81,14 +80,6 @@ function pm_activate_pie(e) {
         while (el.tagName != 'DIV') {
         el = (el.parentElement) ? el.parentElement : el.parentNode ;}
         pm.clickedelement = el;
-        
-	// If we activated on mousedown, we are move type, else its click, move, click
-	console.log(e);
-        if (e.type == "mousedown" ) {
-        	pm.type = "mouseup";
-        } else {
-        	pm.type = "click";
-        }        	
         
         // Load the images and get info on the window
         var windowWidth =  (window.innerWidth) ? window.innerWidth : document.body.clientWidth;
@@ -173,18 +164,18 @@ function pm_activate_pie(e) {
                 tooltip.style.top = pm.pieorigin[1] + pm.iconradius + 15;
         }
 
-	if (document.addEventListener) {
-                document.addEventListener(pm.type,pm_select_action,true);
+
+        if (document.addEventListener) {
+                document.addEventListener("click",pm_select_action,true);
                 document.addEventListener("mousemove",pm_mouse_move,false);
-	}
-	else if (document.attachEvent) {
-		document.attachEvent("on"+pm.type,pm_select_action);
-		document.attachEvent("onmousemove",pm_mouse_move);
-	}
-	else {
-		alert("Your browser does not support any useful event models.");
-		return false;
-	}
+        }
+        else {
+                pm.oldonclick = document.onclick;
+                pm.oldmousemove = document.onmousemove;
+                document.onclick = pm_select_action;
+                document.onmousemove = pm_mouse_move;
+                pm.preventSelect = true;
+        }
         
         //Prevent propogation and return
         if (e.preventDefault) {e.preventDefault();}
@@ -218,13 +209,10 @@ function pm_mouse_move(e) {
             posX = e.clientX  - pm.pieorigin[0];
             posY = e.clientY  - pm.pieorigin[1];
         }
-        
-	var tooltip = document.getElementById('pietooltip');
-
 
         // Small radius => turn off active select
-        var radius = Math.sqrt(Math.pow(posY,2) + Math.pow(posX,2));
-        if (radius < pm.iconradius) {
+        var radius = Math.sqrt(Math.pow(posY,2) + Math.pow(posX,2))
+        if (radius < pm.iconradius/2) {
                 if (pm.oldimg != null) {        // Set the old icon back
                         pm.oldimg.src = pm.oldimg.oldsrc;
                         pm.oldimg = null;
@@ -246,6 +234,7 @@ function pm_mouse_move(e) {
         
         // Identify the img associated with this sector and activate focus if we are new here
         var img = document.getElementById('pieicon' + sector);
+        var tooltip = document.getElementById('pietooltip');
         if (pm.oldimg != img) {
                 if (pm.oldimg != null) {        // Set the old icon back
                         pm.oldimg.src = pm.oldimg.oldsrc;
@@ -296,20 +285,16 @@ function pm_select_action(e) {
         // Execute the action
         if (selectedsector != null) { alert(pm.iconimg[selectedsector].tooltip + ' activated.');}
         else { alert('cancelled menu');}
-        
-	if (document.addEventListener) {
-		document.removeEventListener(pm.type,pm_select_action,true);
-		document.removeEventListener("mousemove",pm_mouse_move,false);
-	}
-	else if (document.attachEvent) {
-		document.detachEvent("on"+pm.type,pm_select_action);
-		document.detachEvent("onmousemove",pm_mouse_move);
-	}
-	else {
-		alert("Your browser does not support any useful event models.");
-		return false;
-	}
 
+        if (document.removeEventListener) {
+                document.removeEventListener("click",pm_select_action,true);
+                document.removeEventListener("mousemove",pm_mouse_move,false);
+        }
+        else {
+                document.onclick = oldonclick;
+                document.onmousemove = oldmousemove;
+                pm.preventSelect = false;
+        }
 
         //Prevent propogation
         if (e.preventDefault) {e.preventDefault();}

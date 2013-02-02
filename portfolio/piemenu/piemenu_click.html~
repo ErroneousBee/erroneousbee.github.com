@@ -13,7 +13,8 @@
    <!-- Actuall visible contents -->
    <div class="content">
    <div class="preamble">
-   <p><strong>Click on the highlighted texts or targets to activate a pie menu.</strong></p>
+   <p><strong>Mostly works, but refinement needed</strong></p>
+   <p> Click on the highlighted texts or targets to activate a pie menu.</p>
    <p> Move the mouse to a sector, clicking again activates an alert message.</p>
    </div>
 
