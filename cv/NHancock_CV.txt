@@ -1,0 +1,79 @@
+Neil Hancock
+
+Experienced multi-platform enterprise developer specializing in web applications.
+
+Technical Expertise
+Languages: 	JavaScript, C, BAL,  Assembler, bash shell, Rexx,  Java.
+		XML, SQL, HTML, CSS,  JSON.
+Concepts:	Agile, TDD, MVC, HCI, Usability.
+Tools:		Eclipse, Visual C/C++, gcc, xc.
+		Ant, make. SubVersion, git, VSS.
+		Selenium, Bugzilla, GIMP, Inkscape, Installsheild, Firebug, cygwin.
+Environment:	Apache, ISS. Firefox, Internet Explorer, Chrome, Webkit.
+		ISPF,  Unix Systems Services, DB2, CICS.
+Systems:	Linux, z/OS, Windows, Unix
+
+Web application development. Enterprise application development. Legacy application modernization.
+
+Muti-tier, multi-platform environments. Development of build tools.
+
+Competent in many other programming languages.
+
+Able to quickly adapt to new languages, software packages and development environments.
+
+Current Employment 
+==================
+
+2007- present:	Web Applications Developer at Macro 4 Limited.
+Responsible for development and maintenance  of a 3 tier Web interface for application support 
+
+tools: dump analysis, program trace, and data editing.  
+
+Applications are hosted on IBM z/OS, accessed from a browser via Web servers using XML based transactions.
+
+Browser development using JavaScript, HTML, CSS and associated web technologies.
+
+Web server module development in C. Modules hosted in Apache, ISS or IBM httpd on z/OS, Linux and Windows platforms. Responsible for design of XML transactions.
+
+Responsible for some development of backend services, coding in Rexx and BAL (IBM Basic Assembly Language).  
+
+Development and maintenance of build and automated test systems. Written in bash and Java, using ant, selenium, makefiles.
+
+Previous Employment
+===================
+2002 – 2007	Mainframe Applications Developer, Macro 4 PLC
+
+Development of ISPF interface for a z/OS dump analysis suite. Development of test cases using COBOL, C, PL/I and BAL. Development of product configuration tools in Rexx and ISPF. Conversion of ISPF interface code to use XML as data transport to eclectic user interfaces (Web, print, email).
+
+1998 – 2002	Testing Engineer, Macro 4 PLC
+
+Responsible for pre-release testing of Mainframe and PC based products. Development of test suites and documentation systems.
+
+1991 – 1998 	MVS systems programmer, UK Meteorological Office, Bracknell
+
+Installation, Maintenance and Support of system software running on MVS/ESA, including RACF, TCP/IP, communications, security packages and ISPF/TSO. Programming in JCL, REXX, CLIST and 370 ASSEMBLER. Development and maintenance of in-house written software, including an archive system for scientific data, and an email client for ISPF.
+Backup support of UNIX networks. Including problem resolution, system administration and data backup on HP and AIX systems. Programming in UNIX script.
+
+Education 
+=========
+1988 – 1991 Exeter University	 
+BSc Honours (III) in Physics
+
+1981 – 1988 Culverhay Comprehensive School, Rush Hill, Bath, Avon
+A- levels:  Computer Science (B), Mathematics (C), Physics (D).
+O- levels:   English, Maths, Physics, Computer Science, Engineering Drawing, Chemistry with Biology. 
+
+Personal
+========
+
+Full Clean Driving Licence. 
+British National.
+Interests: Mountain Biking, Football, Morris Dancing, Ballroom Dancing, Conservation Volunteering.
+
+Contact Details for Neil William Hancock
+========================================
+
+Address: 35 Morton Road, East Grinstead, West Sussex. RH19 4AF
+Mobile: 07532 242296
+Email: neil@neilhancock.co.uk
+References upon request.
