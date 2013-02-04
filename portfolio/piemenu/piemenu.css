@@ -1,5 +1,4 @@
 div.piemenu {
- position: absolute;
  visibility:hidden;
 }
 
@@ -21,6 +20,7 @@ img.pieicon {
  margin:0px;
  padding:0px;
  border:0px;
+ position:absolute;
 }
 
 /* An absolute positioned mouse target */
