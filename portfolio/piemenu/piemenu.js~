@@ -150,7 +150,7 @@ function pm_activate_pie(e) {
     }
 
     // Position the div at event mouse position and activate the menu
-    var menudiv = pm_get_div('piemenu','piemenu');
+    var menudiv = document.getElementById('piemenu');
     menudiv.innerHTML = '<span id="pietooltip"></span><span id="pieicons"></span>';
 
     var menudiv = document.getElementById('pieicons');
@@ -339,24 +339,3 @@ function pm_select_action(e) {
 
     return false;
 }
-
-/**
- * Function: pm_create_div
- * Attach a div to the document body if it doesnt already exist.
- */ 
-
-function pm_get_div(divid,classname) {
-    
-    var div = document.getElementById(divid);
-    if (div) {
-        return div;
-    }
-    
-    var div = document.createElement('div');
-    div.className = classname;
-    div.setAttribute('id',divid);
-    document.body.appendChild(div);
-    
-    return document.getElementById(divid);
-}
-

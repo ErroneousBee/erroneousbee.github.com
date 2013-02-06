@@ -7,6 +7,10 @@
 
   </head>
   <body onload="pm_init_pie_menu_icons();">
+
+   <div id="piemenu" class="piemenu"></div>
+
+   <!-- Actuall visible contents -->
    <div class="content">
    <div class="preamble">
    <p><strong>Click on the highlighted texts or targets to activate a pie menu.</strong></p>
