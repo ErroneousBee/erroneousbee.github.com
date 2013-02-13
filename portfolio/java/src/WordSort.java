@@ -34,5 +34,7 @@ public class WordSort {
         		commasep = ", ";
         	}
         }
+        System.out.print("\n");
+
     }
 }
