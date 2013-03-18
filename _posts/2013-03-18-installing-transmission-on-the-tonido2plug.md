@@ -10,11 +10,11 @@ tags: [tonido2plug,arch,systemd]
  
 # Install transmission
 
-   sudo pacman -Sy transmission-cli
+    [neil@tonido]$ sudo pacman -Sy transmission-cli
     
 # Start the service
 
-   neil@tonido]$ sudo systemctl start transmission.service
+    [neil@tonido]$ sudo systemctl start transmission.service
  
 # Configure the basics
 
