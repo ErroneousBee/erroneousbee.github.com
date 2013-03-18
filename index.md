@@ -40,7 +40,7 @@ Also avilable in [rich text](cv/NHancock_CV.rtf),  [plain text](cv/NHancock_CV.t
 
 ## Rexx
 
-Many years ago, I was a Mainframe Syswtem Programmer, then an application developer using Rexx and ISPF.
+I was a Mainframe System Programmer, then an application developer using Rexx and ISPF.
 
 Rexx is a scripting language used heavily on OS/390 Mainframes under TSO, ISPF, and sometimes batch work. It also exits in various forms on Unix, and PC.
 
