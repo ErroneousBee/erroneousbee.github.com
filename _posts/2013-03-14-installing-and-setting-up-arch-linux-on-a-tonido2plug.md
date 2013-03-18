@@ -4,7 +4,7 @@ title: "Installing Arch Linux on a Tonido2plug"
 tagline: 
 description: "First steps in setting up a tonido2plug"
 category: tonido2plug
-tags: [tonido2plug,arch]
+tags: [ tonido2plug , arch ]
 ---
 {% include JB/setup %}
 

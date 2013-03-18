@@ -3,7 +3,7 @@ layout: post
 title: "Customization of Arch Linux on a Tonido2plug"
 description: Things to do immediately after install of Arch Linux
 category: tonido2plug
-tags: [tonido2plug,arch,systemd]
+tags: [ tonido2plug , arch , systemd ]
 ---
 {% include JB/setup %}
 

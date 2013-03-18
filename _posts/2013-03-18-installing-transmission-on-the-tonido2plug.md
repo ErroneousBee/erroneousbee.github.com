@@ -3,7 +3,7 @@ layout: post
 title: "Installing transmission on the Tonido2plug"
 description: Installing the transmission bittorrent client
 category: tonido2plug
-tags: [tonido2plug,arch,systemd]
+tags: [ tonido2plug , arch , systemd ]
 ---
 {% include JB/setup %}
 
