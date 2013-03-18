@@ -38,3 +38,6 @@ Thumbs.db
 # Editor temp files #
 *~
 \#*\#
+
+# Jekyll site output ##
+_site/
