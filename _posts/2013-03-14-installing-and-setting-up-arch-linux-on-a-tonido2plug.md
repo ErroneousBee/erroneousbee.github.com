@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Installing and Setting up Arch Linux on a Tonido2plug"
+title: "Installing Arch Linux on a Tonido2plug"
 tagline: 
 description: "First steps in setting up a tonido2plug"
 category: tonido2plug
