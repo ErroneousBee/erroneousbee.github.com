@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Initial Customization of Arch Linux on a Tonido2plug"
-description: ""
-category: 
-tags: []
+title: "Customization of Arch Linux on a Tonido2plug"
+description: Things to do immediately after install of Arch Linux
+category: tonido2plug
+tags: [tonido2plug,arch,systemd]
 ---
 {% include JB/setup %}
 
@@ -23,7 +23,7 @@ You should be logged in as root, so set the password now.
 
 # Set up mount of the home directory
     
-During the install, you partitioned your 500Gb drive to create a 20Gb root partition, and over 400Gb of home. The system hasnt been told about where to mount the second partition.
+During the install, you partitioned your 500Gb drive to create a 20Gb root partition, and over 400Gb of home. The system hasn't been told about where to mount the second partition.
 
 Edit fstab to mount /home.
 
@@ -55,7 +55,7 @@ ssh back into the system before running:
 
 # Make sure systemd runs rc.local during boot
 
-The new ststemd appears not to include an rc.local service. This is 
+The new systemd appears not to include an rc.local service. This is 
 probably fixed in later releases of Arch, but meanwhile, we can do it ourselves.
 
 Create a new systemd entry for rc-local:
@@ -118,7 +118,7 @@ Install hdparm tool, and add a command to rc.local to be quiet and spin down aft
     pacman -S hdparm
     cat "/sbin/hdparm -q -B1 -q -S12 -q -M128 /dev/sda" /etc/rc.local
 
-Unfortunately, theres lots of services poking at the drive, so it often spins up again.
+Unfortunately, there's lots of services poking at the drive, so it often spins up again.
 
 
 # Shush syslog by cacheing stuff
