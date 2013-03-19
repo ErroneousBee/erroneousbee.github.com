@@ -15,3 +15,5 @@ A [pie menu](piemenu/piemenu_click.html) in JavaScript, click to open, move mous
 A [pie menu](piemenu/piemenu_move.html) in JavaScript. In this version: click, hold mouse down, drag to select, release to activate selection. (under development)
 
 A frames based [reaction game](reactiongame/index.html) I created years ago to test inter-frame communication.
+
+![Morris Dancing Poster](spirimawgus_workshop_01.png "Morris Dancing Poster") created with Inkscape.

@@ -1,0 +1,66 @@
+Development and last line support of a 3 tier web interface for application support tools.
+
+Products are for dump analysis, program trace, and data editing on z/OS (IBM mainframe).
+
+Applications are hosted on IBM z/OS back-end. Communicating via XML transaction to Apache or IIS modules in the middle tier. 
+Browser development is a mix of legacy and legacy code. 
+
+Responsible for:
+- Javascript/HTML/CSS development in browser.
+- C and Java development for Apache and ISS modules.
+- Some Rexx and Assembler development of back end products. 
+- Design of User Interface and XML transactions.
+- TDD test case development during initial developments.
+- Regression testing with Selenium.
+- Development and maintenance of build systems.
+- Writing functional description of new features for Technical Authors.  
+
+
+
+Installation, Maintenance and Support of system software running on MVS/ESA.
+
+
+Responsible for installation, customization and operation of RACF, TCP/IP, communications, security packages and ISPF/TSO software.
+
+Development and maintenance of in-house written software, including the CRACER archive system for scientific data, and an email client for ISPF.
+ 
+System administration and data backup on HP and AIX systems.
+
+Programming in JCL, REXX, CLIST, Shell script, and 370 ASSEMBLER. 
+
+
+1.
+BSc. in Physics, with over 20 years in IT, most recently developing a 3 tier web application (M4Explorer) for blue chip clients.
+
+2.
+The M4Explorer Web Application pre-dates most frameworks, which necessitated developing our own lightweight frameworks. I am familiar with Java frameworks but have until now avoided them as unnecessarily complex.
+
+3.
+Have been developing a web application for several years, including the migration from iframe based communications to XMLHTTPRequest. 
+
+4.
+Developed a feature for dump solution archiving. HTML web pages created by the user are converted to PDF and stored in a proprietary database. I was the developer of the Java service that converted HTML to PDF and archived the documents using XML over a TCP/IP socket connection.
+
+5.
+Agile and TDD methodologies used to develop major new features. XML transactions initially developed using test harnesses to emulating the web server or client. Once the transaction were stable the user interface was developed from wireframe to full interface.
+
+6.
+The dump anaysis tool used to debug problems includes tools to reconstruct database interactions in the failing program. Databases supported are DB2 and IMS.
+
+Designed and developed a database using SQLJet ( A Java implementation of SQLite) as part of a Selenium regression test suite.
+
+Some exposure to MySQL when installing and configuring tools such as MediaWiki. 
+
+7.
+M4Explorer is a 3 tier web application, hosted on Linux, Windows and z/OS. The back end products are complete products in their own right, with their own development teams and development schedules.
+
+Development of M4Explorer involves interaction with multiple managers and product architects, each with their own ideas on user interface idioms, structure of XML transactions, technologies used, and and a schedule often dictated by concerns outside of management control. 
+
+
+8. 
+Have been programing Java on and off for over 10 years, and Javascript for 9 years.
+
+Have created applications using MVC in Javascript, and used Factory patterns in Java.
+
+9. 
+Programming is by its nature an independent activity, punctuated by periods of interaction with team mambers 
