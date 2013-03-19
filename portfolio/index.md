@@ -5,6 +5,7 @@ tagline: Some code examples.
 category: [ portfolio, cv ]
 ---
 {% include JB/setup %}
+[poster1]: spirimawgus_workshop_01.png "Morris Dancing Poster"
 
 All of my professional work is for intranets, and I do not have copyright to rehost it. So here are a few snippets by way of a portfolio:
 
@@ -16,4 +17,5 @@ A [pie menu](piemenu/piemenu_move.html) in JavaScript. In this version: click, h
 
 A frames based [reaction game](reactiongame/index.html) I created years ago to test inter-frame communication.
 
-![Morris Dancing Poster](spirimawgus_workshop_01.png "Morris Dancing Poster") created with Inkscape.
+
+Morris Dancing Poster [![Poster Thumbnail](spirimawgus_workshop_01_thumb.png)][poster1] created with Inkscape.
