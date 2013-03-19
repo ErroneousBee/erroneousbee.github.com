@@ -50,4 +50,11 @@ There are also some [Rexx Examples](Computers/index.html) I collected many years
 
 The FAQ attempts to cover questions specific to Rexx on z/OS, other FAQs for other implementations of Rexx exist.
 
+# Photo Sets
+
+[Insect Macro shots](http://www.flickr.com/photos/85728344@N03/sets/72157633004136334/)
+
+[Spirimawgus Morris at Wakehurst Place](http://www.flickr.com/photos/85728344@N03/sets/72157631650815602/detail/)
+
+
 
