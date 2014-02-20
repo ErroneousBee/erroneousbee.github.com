@@ -18,20 +18,20 @@ Configuration is a little hairy, as the YAML is very fussy about whitespace.
     
 And transliterate everything from podracer to config.yml:
 
-    tasks:                                                                                                                                                                                                                                                                         
-      nakedscientists:                                                                                                                                                                                                                                                             
-        accept_all: yes                                                                                                                                                                                                                                                            
-        rss: http://www.thenakedscientists.com/naked_scientists_podcast.xml                                                                                                                                                                                                        
-        download: /home/neil/PodCasts/Naked_Scientists/                                                                                                                                                                                                                            
-      nature:                                                                                                                                                                                                                                                                      
-        accept_all: yes                                                                                                                                                                                                                                                            
-        rss: http://www.nature.com/nature/podcast/rss/nature.xml                                                                                                                                                                                                                   
-        download: /home/neil/PodCasts/Nature_Magazine/                                                                                                                                                                                                                             
-      iot:                                                                                                                                                                                                                                                                         
-        accept_all: yes                                                                                                                                                                                                                                                            
-        rss: http://downloads.bbc.co.uk/podcasts/radio4/iot/rss.xml                                                                                                                                                                                                                
+    tasks:
+      nakedscientists:
+        accept_all: yes
+        rss: http://www.thenakedscientists.com/naked_scientists_podcast.xml
+        download: /home/neil/PodCasts/Naked_Scientists/
+      nature:
+        accept_all: yes
+        rss: http://www.nature.com/nature/podcast/rss/nature.xml
+        download: /home/neil/PodCasts/Nature_Magazine/
+      iot:
+        accept_all: yes
+        rss: http://downloads.bbc.co.uk/podcasts/radio4/iot/rss.xml
         download: /home/neil/PodCasts/BBC/In_Our_Time/
-      scia:    
+      scia:
         accept_all: yes
         rss: http://downloads.bbc.co.uk/podcasts/worldservice/scia/rss.xml
         download: /home/neil/PodCasts/BBC/ScienceInAction/
@@ -92,7 +92,14 @@ After a few days we look in our PodCasts directory and we find ...
     [zip]
     [nada]
     
-We footle around for an hour trying to work out why flexget says it is downloading, when nothing arrives in our PodCasts directory. 
+We footle around for an hour trying to work out why flexget says it is downloading, when nothing arrives in our PodCasts directory.
+It may be rogue whitespace in the yml, but
+
+    flexget check
+
+doesn't report any problems.
+
+
 We notice that flexget is very slow. Frustratingly slow.
 
 
